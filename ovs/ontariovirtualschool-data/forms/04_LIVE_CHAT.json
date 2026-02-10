@@ -1,0 +1,149 @@
+{
+  "_metadata": {
+    "component_name": "Live Chat Widget",
+    "provider": "Crisp",
+    "source_url": "https://www.ontariovirtualschool.ca/",
+    "location": "All pages (bottom-right corner)",
+    "last_extracted": "2026-01-30",
+    "version": "1.0",
+    "notes": "Crisp chat widget for live support and offline messaging"
+  },
+  "technology": {
+    "platform": "Crisp",
+    "website": "https://crisp.chat",
+    "integration_type": "JavaScript SDK",
+    "load_method": "async",
+    "no_page_blocking": true
+  },
+  "configuration": {
+    "website_id": "CRISP_WEBSITE_ID_HERE",
+    "position": "bottom-right",
+    "color_theme": "custom",
+    "primary_color": "#007bff",
+    "language": "en"
+  },
+  "initialization_code": {
+    "javascript": "window.$crisp = [];\nwindow.CRISP_WEBSITE_ID = \"YOUR_WEBSITE_ID\";\n(function() {\n  var d = document;\n  var s = d.createElement(\"script\");\n  s.src = \"https://client.crisp.chat/l.js\";\n  s.async = 1;\n  d.getElementsByTagName(\"head\")[0].appendChild(s);\n})();",
+    "placement": "<head> or before </body>"
+  },
+  "widget_states": {
+    "closed": {
+      "display": "chat_bubble",
+      "icon": "message_icon",
+      "text": null,
+      "animation": "bounce_on_new_message"
+    },
+    "open": {
+      "display": "chat_window",
+      "width": "400px",
+      "height": "600px",
+      "components": ["header", "message_list", "input_field", "send_button"]
+    }
+  },
+  "features": {
+    "live_chat": {
+      "enabled": true,
+      "description": "Real-time messaging with support staff"
+    },
+    "offline_messaging": {
+      "enabled": true,
+      "description": "Leave message when staff unavailable",
+      "form_fields": ["name", "email", "message"]
+    },
+    "file_sharing": {
+      "enabled": true,
+      "max_file_size_mb": 10,
+      "allowed_types": ["images", "documents", "pdf"]
+    },
+    "chat_history": {
+      "enabled": true,
+      "persistent_across_sessions": true,
+      "storage": "local_storage_and_server"
+    },
+    "typing_indicators": {
+      "enabled": true,
+      "shows": "both_parties"
+    },
+    "read_receipts": {
+      "enabled": true
+    },
+    "proactive_messages": {
+      "enabled": true,
+      "trigger_after_seconds": 30,
+      "message": "Hi! How can we help you today?"
+    },
+    "visitor_tracking": {
+      "enabled": true,
+      "tracks": ["current_page", "time_on_site", "referrer"]
+    },
+    "pre_chat_form": {
+      "enabled": false,
+      "fields": []
+    }
+  },
+  "offline_form": {
+    "title": "Leave us a message",
+    "description": "We're not available right now. Leave your message and we'll get back to you.",
+    "fields": [
+      {
+        "name": "name",
+        "label": "Your Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter your name"
+      },
+      {
+        "name": "email",
+        "label": "Email Address",
+        "type": "email",
+        "required": true,
+        "placeholder": "Enter your email"
+      },
+      {
+        "name": "message",
+        "label": "Message",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "How can we help?"
+      }
+    ],
+    "submit_button": "Send Message",
+    "success_message": "Thanks! We'll get back to you soon."
+  },
+  "mobile_behavior": {
+    "responsive": true,
+    "full_screen_on_mobile": true,
+    "touch_optimized": true
+  },
+  "customization": {
+    "colors": {
+      "primary": "#007bff",
+      "header_background": "#007bff",
+      "header_text": "#ffffff",
+      "visitor_bubble": "#007bff",
+      "operator_bubble": "#f1f1f1"
+    },
+    "texts": {
+      "welcome_message": "Hi there! How can we help you today?",
+      "away_message": "We're not available right now. Leave a message!",
+      "input_placeholder": "Type your message..."
+    },
+    "avatar": {
+      "show_operator_avatar": true,
+      "default_avatar": "initials"
+    }
+  },
+  "analytics": {
+    "conversation_tracking": true,
+    "response_time_metrics": true,
+    "satisfaction_ratings": true,
+    "integration_with_google_analytics": false
+  },
+  "api_methods": {
+    "open_chat": "$crisp.push([\"do\", \"chat:open\"])",
+    "close_chat": "$crisp.push([\"do\", \"chat:close\"])",
+    "send_message": "$crisp.push([\"do\", \"message:send\", [\"text\", \"Hello!\"]])",
+    "set_user_email": "$crisp.push([\"set\", \"user:email\", [\"email@example.com\"]])",
+    "set_user_name": "$crisp.push([\"set\", \"user:nickname\", [\"John Doe\"]])"
+  }
+}

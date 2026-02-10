@@ -1,0 +1,126 @@
+{
+  "_metadata": {
+    "project": "Ontario Virtual School - Forms Documentation",
+    "source_website": "https://www.ontariovirtualschool.ca/",
+    "extraction_date": "2026-01-30",
+    "total_forms": 5,
+    "version": "1.0",
+    "description": "Combined JSON of all forms and interactive elements for programmatic access"
+  },
+  "technology_stack": {
+    "cms": "WordPress",
+    "e_commerce": "WooCommerce",
+    "payment_gateway": "Square",
+    "forms_plugin": "Contact Form 7",
+    "ui_framework": "Material-UI (React)",
+    "chat_widget": "Crisp",
+    "email_marketing": "Mailchimp"
+  },
+  "forms": {
+    "contact_form": {
+      "id": "01",
+      "name": "Contact Form",
+      "url": "https://www.ontariovirtualschool.ca/contact-us/",
+      "technology": "Contact Form 7 (WordPress)",
+      "submission_method": "AJAX POST",
+      "endpoint": "/wp-admin/admin-ajax.php",
+      "fields_count": 13,
+      "required_fields": ["your-name", "your-email", "user-profile-type", "contact-reason", "contact-message"],
+      "has_conditional_logic": true,
+      "spam_protection": "honeypot",
+      "detailed_spec": "01_CONTACT_FORM.json"
+    },
+    "course_search": {
+      "id": "02",
+      "name": "Course Search & Filter",
+      "url": "https://www.ontariovirtualschool.ca/courses/",
+      "technology": "React + Material-UI",
+      "submission_method": "client_side",
+      "endpoint": null,
+      "components": ["autocomplete_search", "grade_filter", "subject_filter", "credit_filter"],
+      "is_ajax": false,
+      "is_client_side": true,
+      "detailed_spec": "02_COURSE_SEARCH.json"
+    },
+    "registration_checkout": {
+      "id": "03",
+      "name": "Registration & Checkout",
+      "url": "https://www.ontariovirtualschool.ca/register-online/",
+      "technology": "WooCommerce + Square",
+      "submission_method": "POST",
+      "payment_gateway": "Square",
+      "sections": ["student_info", "parent_info", "billing_info", "payment_info"],
+      "total_fields": 25,
+      "is_multi_step": true,
+      "detailed_spec": "03_REGISTRATION_CHECKOUT.json"
+    },
+    "live_chat": {
+      "id": "04",
+      "name": "Live Chat Widget",
+      "url": "all_pages",
+      "technology": "Crisp",
+      "integration": "JavaScript SDK",
+      "features": ["live_chat", "offline_messaging", "file_sharing", "chat_history"],
+      "offline_form_fields": ["name", "email", "message"],
+      "detailed_spec": "04_LIVE_CHAT.json"
+    },
+    "newsletter_signup": {
+      "id": "05",
+      "name": "Newsletter Signup",
+      "url": "footer",
+      "technology": "Mailchimp",
+      "submission_method": "POST to Mailchimp",
+      "double_optin": true,
+      "fields": ["EMAIL", "FNAME", "LNAME"],
+      "required_fields": ["EMAIL"],
+      "spam_protection": "honeypot",
+      "detailed_spec": "05_NEWSLETTER_SIGNUP.json"
+    }
+  },
+  "field_types_used": [
+    "text",
+    "email",
+    "tel",
+    "select",
+    "textarea",
+    "checkbox",
+    "date",
+    "credit_card",
+    "hidden"
+  ],
+  "validation_methods": [
+    "required",
+    "email_format",
+    "phone_format",
+    "min_length",
+    "max_length",
+    "pattern_match",
+    "postal_code",
+    "credit_card"
+  ],
+  "spam_protection_methods": [
+    "honeypot_fields",
+    "double_optin",
+    "server_validation"
+  ],
+  "rebuild_dependencies": {
+    "wordpress_plugins": [
+      "WooCommerce",
+      "WooCommerce Square",
+      "Contact Form 7",
+      "Conditional Fields for Contact Form 7"
+    ],
+    "external_services": [
+      {"name": "Crisp", "purpose": "Live chat", "url": "https://crisp.chat"},
+      {"name": "Mailchimp", "purpose": "Email marketing", "url": "https://mailchimp.com"},
+      {"name": "Square", "purpose": "Payment processing", "url": "https://squareup.com"}
+    ],
+    "npm_packages": [
+      "@mui/material",
+      "@mui/icons-material",
+      "@emotion/react",
+      "@emotion/styled",
+      "react"
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "contact_form": {
+    "url": "https://www.ontariovirtualschool.ca/contact-us/",
+    "technology": "Contact Form 7 (WordPress)",
+    "method": "POST",
+    "action": "/contact-us/#wpcf7-f21440-p15-o1",
+    "submission_type": "AJAX",
+    "fields": [
+      {
+        "name": "your-name",
+        "label": "Your Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "your-email",
+        "label": "Your Email",
+        "type": "email",
+        "required": true
+      },
+      {
+        "name": "your-phone",
+        "label": "Phone Number",
+        "type": "tel",
+        "required": false
+      },
+      {
+        "name": "user-profile-type",
+        "label": "I am a...",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Student",
+          "Parent/Guardian",
+          "Guidance Counsellor",
+          "Other"
+        ]
+      },
+      {
+        "name": "user-profile-student-grade",
+        "label": "Student Grade",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Grade 8",
+          "Grade 9",
+          "Grade 10",
+          "Grade 11",
+          "Grade 12",
+          "Adult Learner",
+          "Other"
+        ],
+        "conditional": "Shows when profile is Student or Parent"
+      },
+      {
+        "name": "contact-reason",
+        "label": "Contact Reason",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Course Information",
+          "Guidance/Student Support",
+          "Technical Support",
+          "International Student Inquiries",
+          "Billing/Payments",
+          "Other"
+        ]
+      },
+      {
+        "name": "hear-about-us",
+        "label": "How did you hear about us?",
+        "type": "select",
+        "required": false,
+        "options": [
+          "Search Engine",
+          "Social Media",
+          "Brochure",
+          "Friends/Family",
+          "School/Counsellor",
+          "Another Online School",
+          "Returning Student",
+          "Other"
+        ]
+      },
+      {
+        "name": "contact-message",
+        "label": "Your Message",
+        "type": "textarea",
+        "required": true
+      },
+      {
+        "name": "website",
+        "label": "Website (Honeypot)",
+        "type": "hidden",
+        "required": false,
+        "purpose": "Spam protection - hidden field bots fill"
+      }
+    ],
+    "spam_protection": [
+      "honeypot_field",
+      "server_validation"
+    ],
+    "behavior": {
+      "on_success": "Show success message, reset form, send email to admin",
+      "on_error": "Show inline validation errors",
+      "conditional_fields": "Student fields appear based on profile type selection"
+    }
+  },
+  "course_search": {
+    "url": "https://www.ontariovirtualschool.ca/",
+    "technology": "Material-UI (MUI) Autocomplete with React",
+    "type": "client_side",
+    "features": [
+      "autocomplete",
+      "type_ahead",
+      "instant_results",
+      "course_code_search",
+      "course_name_search"
+    ],
+    "filters": {
+      "grade_level": [
+        "Grade 9",
+        "Grade 10",
+        "Grade 11",
+        "Grade 12"
+      ],
+      "subject": [
+        "Math",
+        "Science",
+        "English",
+        "Business",
+        "Social Sciences",
+        "Arts",
+        "etc."
+      ],
+      "credit_type": [
+        "University (U)",
+        "College (C)",
+        "Mixed (M)",
+        "Open (O)"
+      ]
+    }
+  },
+  "registration_checkout": {
+    "url": "https://www.ontariovirtualschool.ca/register-online/",
+    "technology": "WooCommerce",
+    "payment_gateway": "Square",
+    "pricing": {
+      "single_course": "$399-$449",
+      "partial_credit": "$150-$299",
+      "bundles": "$574+"
+    },
+    "checkout_flow": [
+      "Browse courses",
+      "Add to cart",
+      "View cart",
+      "Enter student information",
+      "Enter billing information",
+      "Process payment",
+      "Order confirmation"
+    ],
+    "form_sections": {
+      "student_info": [
+        "Full Name",
+        "DOB",
+        "Email",
+        "Phone",
+        "Current School",
+        "OEN"
+      ],
+      "parent_info": [
+        "Parent Name",
+        "Parent Email",
+        "Parent Phone"
+      ],
+      "billing_info": [
+        "Address",
+        "City",
+        "Province",
+        "Postal Code",
+        "Country"
+      ],
+      "payment_info": [
+        "Card Number",
+        "Expiry",
+        "CVV"
+      ]
+    }
+  },
+  "live_chat": {
+    "technology": "Crisp Chat",
+    "location": "All pages (bottom-right corner)",
+    "features": [
+      "live_chat",
+      "offline_messaging",
+      "file_sharing",
+      "chat_history",
+      "mobile_responsive"
+    ],
+    "behavior": {
+      "online": "Direct conversation with support staff",
+      "offline": "Message form with name, email, message"
+    }
+  },
+  "newsletter": {
+    "technology": "Mailchimp",
+    "location": "Footer",
+    "fields": [
+      {
+        "name": "email",
+        "type": "email",
+        "required": true
+      },
+      {
+        "name": "first_name",
+        "type": "text",
+        "required": false
+      }
+    ]
+  }
+}

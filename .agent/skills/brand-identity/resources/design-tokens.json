@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "brand_name": "Canada e Academy",
+    "description": "Core design tokens for UI implementation. Primary palette anchored by Royal Blue (#2c3892) representing trust and education, and Canadian Red (#ed1c23) representing energy and national identity.",
+    "version": "2.0",
+    "last_updated": "2026-02-09"
+  },
+
+  "colors": {
+    "primary": {
+      "50": "#eef0ff",
+      "100": "#dde2ff",
+      "200": "#b3baff",
+      "300": "#7e8afc",
+      "400": "#4f5de6",
+      "DEFAULT": "#2c3892",
+      "600": "#232e7a",
+      "700": "#1b2463",
+      "800": "#141b4d",
+      "900": "#0e1338",
+      "foreground": "#FFFFFF",
+      "hover": "#232e7a"
+    },
+    "secondary": {
+      "50": "#fef2f2",
+      "100": "#fee2e2",
+      "200": "#fecaca",
+      "300": "#f87171",
+      "400": "#f43f3f",
+      "DEFAULT": "#ed1c23",
+      "600": "#d41920",
+      "700": "#b1151b",
+      "800": "#8c1116",
+      "900": "#6b0d11",
+      "foreground": "#FFFFFF",
+      "hover": "#d41920"
+    },
+
+    "background": "#FFFFFF",
+    "foreground": "#0f172a",
+
+    "surface": {
+      "DEFAULT": "#f8fafc",
+      "raised": "#FFFFFF",
+      "sunken": "#f1f5f9"
+    },
+
+    "muted": {
+      "DEFAULT": "#f1f5f9",
+      "foreground": "#64748b"
+    },
+
+    "accent": {
+      "DEFAULT": "#eef0ff",
+      "foreground": "#2c3892"
+    },
+
+    "card": {
+      "DEFAULT": "#FFFFFF",
+      "foreground": "#0f172a"
+    },
+
+    "border": "#e2e8f0",
+    "input": "#e2e8f0",
+    "ring": "#2c3892",
+
+    "destructive": {
+      "DEFAULT": "#ef4444",
+      "foreground": "#FFFFFF"
+    },
+    "success": {
+      "DEFAULT": "#10b981",
+      "foreground": "#FFFFFF"
+    },
+    "warning": {
+      "DEFAULT": "#f59e0b",
+      "foreground": "#0f172a"
+    },
+    "info": {
+      "DEFAULT": "#3b82f6",
+      "foreground": "#FFFFFF"
+    },
+
+    "canadian_red": "#ed1c23",
+    "maple_accent": "#ff4a4f",
+
+    "dark_mode": {
+      "background": "#0f172a",
+      "foreground": "#f8fafc",
+      "surface": "#1e293b",
+      "surface_raised": "#334155",
+      "muted": "#334155",
+      "muted_foreground": "#94a3b8",
+      "border": "#334155",
+      "card": "#1e293b",
+      "primary": "#7e8afc",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#f87171",
+      "secondary_foreground": "#FFFFFF"
+    }
+  },
+
+  "typography": {
+    "font_family_headings": ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+    "font_family_body": ["Inter", "system-ui", "sans-serif"],
+    "font_family_mono": ["JetBrains Mono", "Fira Code", "monospace"],
+    "font_weight_black": "900",
+    "font_weight_bold": "700",
+    "font_weight_semibold": "600",
+    "font_weight_medium": "500",
+    "font_weight_normal": "400",
+
+    "scale": {
+      "display": { "size": "3.75rem", "line_height": "1", "letter_spacing": "-0.025em", "weight": "900" },
+      "h1": { "size": "2.25rem", "line_height": "1.2", "letter_spacing": "-0.025em", "weight": "700" },
+      "h2": { "size": "1.875rem", "line_height": "1.25", "letter_spacing": "-0.02em", "weight": "700" },
+      "h3": { "size": "1.5rem", "line_height": "1.3", "letter_spacing": "-0.015em", "weight": "600" },
+      "h4": { "size": "1.25rem", "line_height": "1.4", "letter_spacing": "0", "weight": "600" },
+      "body_lg": { "size": "1.125rem", "line_height": "1.75", "weight": "400" },
+      "body": { "size": "1rem", "line_height": "1.75", "weight": "400" },
+      "body_sm": { "size": "0.875rem", "line_height": "1.5", "weight": "400" },
+      "caption": { "size": "0.75rem", "line_height": "1.5", "weight": "500" },
+      "overline": { "size": "0.75rem", "line_height": "1.5", "letter_spacing": "0.05em", "weight": "600", "text_transform": "uppercase" }
+    }
+  },
+
+  "ui": {
+    "border_radius": {
+      "none": "0",
+      "sm": "0.375rem",
+      "DEFAULT": "0.75rem",
+      "md": "0.75rem",
+      "lg": "1rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "full": "9999px"
+    },
+    "spacing_base_unit": "4px",
+    "container_max_width": "1280px",
+    "shadow": {
+      "sm": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+      "DEFAULT": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+      "md": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      "lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      "xl": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      "card_hover": "0 12px 24px -4px rgb(44 56 146 / 0.12), 0 4px 8px -2px rgb(44 56 146 / 0.06)"
+    },
+    "transition": {
+      "fast": "150ms ease",
+      "DEFAULT": "200ms ease",
+      "slow": "300ms ease"
+    },
+    "z_index": {
+      "dropdown": "50",
+      "sticky": "100",
+      "modal_backdrop": "200",
+      "modal": "300",
+      "toast": "400"
+    }
+  },
+
+  "gradients": {
+    "hero": "linear-gradient(135deg, #2c3892 0%, #1b2463 50%, #141b4d 100%)",
+    "hero_warm": "linear-gradient(135deg, #2c3892 0%, #4f5de6 60%, #ed1c23 100%)",
+    "cta_button": "linear-gradient(135deg, #ed1c23 0%, #d41920 100%)",
+    "surface_subtle": "linear-gradient(180deg, #f8fafc 0%, #FFFFFF 100%)",
+    "trust_banner": "linear-gradient(90deg, #2c3892 0%, #232e7a 100%)"
+  },
+
+  "illustrations": {
+    "style_notes": "Use flat, geometric illustration style with rounded shapes. Pair Primary Blue as the dominant colour with Canadian Red as an energetic accent. Incorporate subtle maple leaf motifs and academic icons (graduation caps, books, laptops). Avoid overly childish clip-art; target a modern, Preply-like warmth."
+  }
+}

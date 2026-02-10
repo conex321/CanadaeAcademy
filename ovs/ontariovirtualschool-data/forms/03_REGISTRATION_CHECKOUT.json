@@ -1,0 +1,373 @@
+{
+  "_metadata": {
+    "form_name": "Registration & Checkout System",
+    "source_url": "https://www.ontariovirtualschool.ca/register-online/",
+    "checkout_url": "https://www.ontariovirtualschool.ca/register-online/checkout/",
+    "last_extracted": "2026-01-30",
+    "version": "1.0",
+    "notes": "WooCommerce-based e-commerce system for course registration and payment"
+  },
+  "technology": {
+    "platform": "WordPress",
+    "e_commerce": "WooCommerce",
+    "version": "8.x",
+    "payment_gateway": "Square",
+    "ssl": true,
+    "pci_compliant": true
+  },
+  "pricing": {
+    "currency": "CAD",
+    "single_course": {
+      "min": 399,
+      "max": 449,
+      "typical": 449
+    },
+    "partial_credit": {
+      "min": 150,
+      "max": 299
+    },
+    "bundles": {
+      "available": true,
+      "starting_at": 574
+    },
+    "discounts": {
+      "coupon_codes": true,
+      "bulk_discount": true,
+      "returning_student": true
+    }
+  },
+  "checkout_flow": [
+    {
+      "step": 1,
+      "name": "browse_courses",
+      "url": "/courses/",
+      "description": "Browse and select courses"
+    },
+    {
+      "step": 2,
+      "name": "add_to_cart",
+      "action": "woocommerce_ajax_add_to_cart",
+      "method": "AJAX POST",
+      "description": "Add selected course to shopping cart"
+    },
+    {
+      "step": 3,
+      "name": "view_cart",
+      "url": "/register-online/",
+      "description": "Review cart contents, apply coupons"
+    },
+    {
+      "step": 4,
+      "name": "checkout",
+      "url": "/register-online/checkout/",
+      "description": "Enter student and billing information"
+    },
+    {
+      "step": 5,
+      "name": "payment",
+      "gateway": "Square",
+      "description": "Process payment via Square"
+    },
+    {
+      "step": 6,
+      "name": "confirmation",
+      "url": "/register-online/order-received/",
+      "description": "Order confirmation and receipt"
+    }
+  ],
+  "cart_functionality": {
+    "ajax_add_to_cart": true,
+    "quantity_adjustment": true,
+    "remove_items": true,
+    "coupon_codes": true,
+    "cart_totals": {
+      "subtotal": true,
+      "discounts": true,
+      "taxes": true,
+      "total": true
+    },
+    "mini_cart": {
+      "enabled": true,
+      "location": "header"
+    }
+  },
+  "checkout_form_sections": {
+    "student_information": {
+      "section_title": "Student Information",
+      "fields": [
+        {
+          "name": "student_first_name",
+          "label": "Student First Name",
+          "type": "text",
+          "required": true,
+          "validation": "min_length:2"
+        },
+        {
+          "name": "student_last_name",
+          "label": "Student Last Name",
+          "type": "text",
+          "required": true,
+          "validation": "min_length:2"
+        },
+        {
+          "name": "student_email",
+          "label": "Student Email",
+          "type": "email",
+          "required": true,
+          "validation": "email"
+        },
+        {
+          "name": "student_phone",
+          "label": "Student Phone",
+          "type": "tel",
+          "required": true,
+          "validation": "phone"
+        },
+        {
+          "name": "student_dob",
+          "label": "Date of Birth",
+          "type": "date",
+          "required": true,
+          "validation": "date"
+        },
+        {
+          "name": "student_oen",
+          "label": "Ontario Education Number (OEN)",
+          "type": "text",
+          "required": false,
+          "validation": "numeric:9",
+          "help_text": "9-digit number found on Ontario report cards"
+        },
+        {
+          "name": "current_school",
+          "label": "Current School",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "student_grade",
+          "label": "Current Grade",
+          "type": "select",
+          "required": true,
+          "options": ["Grade 8", "Grade 9", "Grade 10", "Grade 11", "Grade 12", "Adult Learner"]
+        }
+      ]
+    },
+    "parent_guardian_information": {
+      "section_title": "Parent/Guardian Information",
+      "condition": "student_age < 18",
+      "fields": [
+        {
+          "name": "parent_first_name",
+          "label": "Parent/Guardian First Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "parent_last_name",
+          "label": "Parent/Guardian Last Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "parent_email",
+          "label": "Parent/Guardian Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "parent_phone",
+          "label": "Parent/Guardian Phone",
+          "type": "tel",
+          "required": true
+        },
+        {
+          "name": "relationship",
+          "label": "Relationship to Student",
+          "type": "select",
+          "required": true,
+          "options": ["Mother", "Father", "Guardian", "Other"]
+        }
+      ]
+    },
+    "billing_information": {
+      "section_title": "Billing Information",
+      "fields": [
+        {
+          "name": "billing_first_name",
+          "label": "First Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "billing_last_name",
+          "label": "Last Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "billing_company",
+          "label": "Company Name",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "billing_address_1",
+          "label": "Street Address",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "billing_address_2",
+          "label": "Apartment, suite, etc.",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "billing_city",
+          "label": "City",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "billing_state",
+          "label": "Province",
+          "type": "select",
+          "required": true,
+          "options": ["Ontario", "Quebec", "British Columbia", "Alberta", "Manitoba", "Saskatchewan", "Nova Scotia", "New Brunswick", "Newfoundland and Labrador", "Prince Edward Island", "Northwest Territories", "Yukon", "Nunavut"]
+        },
+        {
+          "name": "billing_postcode",
+          "label": "Postal Code",
+          "type": "text",
+          "required": true,
+          "validation": "postal_code_ca"
+        },
+        {
+          "name": "billing_country",
+          "label": "Country",
+          "type": "select",
+          "required": true,
+          "default": "CA",
+          "options": ["Canada", "United States", "Other"]
+        },
+        {
+          "name": "billing_email",
+          "label": "Email Address",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "billing_phone",
+          "label": "Phone",
+          "type": "tel",
+          "required": true
+        }
+      ]
+    },
+    "payment_information": {
+      "section_title": "Payment",
+      "gateway": "Square",
+      "fields": [
+        {
+          "name": "card_number",
+          "label": "Card Number",
+          "type": "credit_card",
+          "required": true,
+          "rendered_by": "square_sdk",
+          "placeholder": "•••• •••• •••• ••••"
+        },
+        {
+          "name": "card_expiry",
+          "label": "Expiration Date",
+          "type": "expiry",
+          "required": true,
+          "rendered_by": "square_sdk",
+          "placeholder": "MM / YY"
+        },
+        {
+          "name": "card_cvv",
+          "label": "CVV",
+          "type": "cvv",
+          "required": true,
+          "rendered_by": "square_sdk",
+          "placeholder": "•••"
+        },
+        {
+          "name": "card_postal",
+          "label": "Billing Postal Code",
+          "type": "text",
+          "required": true,
+          "rendered_by": "square_sdk"
+        }
+      ],
+      "accepted_cards": ["visa", "mastercard", "amex", "discover"],
+      "security": {
+        "pci_compliant": true,
+        "tokenization": true,
+        "no_card_data_on_server": true
+      }
+    },
+    "terms_and_conditions": {
+      "fields": [
+        {
+          "name": "terms_accepted",
+          "label": "I have read and agree to the Terms and Conditions",
+          "type": "checkbox",
+          "required": true,
+          "link": "/terms-and-conditions/"
+        },
+        {
+          "name": "privacy_accepted",
+          "label": "I have read and agree to the Privacy Policy",
+          "type": "checkbox",
+          "required": true,
+          "link": "/privacy-policy/"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "client_side": true,
+    "server_side": true,
+    "real_time": true,
+    "on_blur": true
+  },
+  "order_confirmation": {
+    "page": "/register-online/order-received/",
+    "displays": [
+      "order_number",
+      "order_date",
+      "student_name",
+      "courses_purchased",
+      "payment_total",
+      "billing_address",
+      "next_steps"
+    ],
+    "emails_sent": [
+      {
+        "type": "order_confirmation",
+        "to": "student_email",
+        "subject": "Your OVS Order Confirmation"
+      },
+      {
+        "type": "order_confirmation",
+        "to": "parent_email",
+        "subject": "Your OVS Order Confirmation",
+        "condition": "parent_email_provided"
+      },
+      {
+        "type": "admin_notification",
+        "to": "admin@ontariovirtualschool.ca",
+        "subject": "New Course Registration"
+      }
+    ]
+  },
+  "security": {
+    "ssl": true,
+    "csrf_token": true,
+    "nonce_verification": true,
+    "payment_tokenization": true,
+    "no_card_storage": true
+  }
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Catalog | Canada e Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec1313",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221010",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-icons">school</span>
+</div>
+<span class="text-xl font-bold tracking-tight">Canada <span class="text-primary">e</span> Academy</span>
+</div>
+<nav class="hidden md:flex space-x-8 items-center">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Courses</a>
+<a class="hover:text-primary transition-colors" href="#">How It Works</a>
+<a class="hover:text-primary transition-colors" href="#">Tuition</a>
+<a class="hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-red-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all shadow-lg shadow-primary/20">
+                        Register Now
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-white dark:bg-slate-900 py-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10 dark:opacity-20">
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+<div class="absolute -left-20 -bottom-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+</div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h1 class="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+                Course Catalog
+            </h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Over 75 OSSD credits available 100% online. Gain your Ontario Secondary School Diploma from anywhere in the world.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-white px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-red-700 transition-all">
+                    Start Registration
+                </button>
+<button class="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 px-8 py-3.5 rounded-lg font-bold text-lg hover:border-primary transition-all">
+                    How It Works
+                </button>
+</div>
+</div>
+</section>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-20 z-40 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 no-scrollbar">
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-primary text-white font-medium text-sm">All Courses</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Grade 12</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Grade 11</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Grade 10</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Grade 9</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">ESL</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Languages</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors font-medium text-sm">Free Courses</button>
+</div>
+<div class="relative min-w-[300px]">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-icons text-lg">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg focus:ring-2 focus:ring-primary" placeholder="Search courses (e.g. MHF4U)..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+<!-- Grade 12 Section -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<div class="h-8 w-1 bg-primary rounded-full"></div>
+<h2 class="text-3xl font-bold">Grade 12 Courses <span class="text-slate-400 text-lg font-normal ml-2">(26 Courses)</span></h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Course Card -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">MHF4U</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">University</span>
+</div>
+<h3 class="text-lg font-semibold mb-6 group-hover:text-primary transition-colors">Advanced Functions</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Credit: 1.0</span>
+<span class="material-icons text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">ENG4U</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">University</span>
+</div>
+<h3 class="text-lg font-semibold mb-6 group-hover:text-primary transition-colors">English</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Credit: 1.0</span>
+<span class="material-icons text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">SCH4C</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">College</span>
+</div>
+<h3 class="text-lg font-semibold mb-6 group-hover:text-primary transition-colors">Chemistry</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Credit: 1.0</span>
+<span class="material-icons text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">BBB4M</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400">Mixed</span>
+</div>
+<h3 class="text-lg font-semibold mb-6 group-hover:text-primary transition-colors">International Business Fundamentals</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Credit: 1.0</span>
+<span class="material-icons text-slate-300 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<!-- More Grade 12 Mock Cards -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="flex justify-between items-start mb-4"><span class="text-2xl font-bold text-primary">MCV4U</span><span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span></div>
+<h3 class="text-lg font-semibold mb-6">Calculus &amp; Vectors</h3>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center"><span class="text-xs text-slate-500 uppercase">Credit: 1.0</span><span class="material-icons text-slate-300">arrow_forward</span></div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="flex justify-between items-start mb-4"><span class="text-2xl font-bold text-primary">SPH4U</span><span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span></div>
+<h3 class="text-lg font-semibold mb-6">Physics</h3>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center"><span class="text-xs text-slate-500 uppercase">Credit: 1.0</span><span class="material-icons text-slate-300">arrow_forward</span></div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="flex justify-between items-start mb-4"><span class="text-2xl font-bold text-primary">SBI4U</span><span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span></div>
+<h3 class="text-lg font-semibold mb-6">Biology</h3>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center"><span class="text-xs text-slate-500 uppercase">Credit: 1.0</span><span class="material-icons text-slate-300">arrow_forward</span></div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all group">
+<div class="flex justify-between items-start mb-4"><span class="text-2xl font-bold text-primary">OLC4O</span><span class="px-2 py-1 rounded text-[10px] font-bold bg-purple-100 text-purple-700">Open</span></div>
+<h3 class="text-lg font-semibold mb-6">Ontario Literacy Course</h3>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center"><span class="text-xs text-slate-500 uppercase">Credit: 1.0</span><span class="material-icons text-slate-300">arrow_forward</span></div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<button class="text-primary font-bold hover:underline flex items-center justify-center gap-2 mx-auto">
+                    View all 26 Grade 12 Courses <span class="material-icons text-sm">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Grade 11 Section -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<div class="h-8 w-1 bg-primary rounded-full"></div>
+<h2 class="text-3xl font-bold">Grade 11 Courses <span class="text-slate-400 text-lg font-normal ml-2">(16 Courses)</span></h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">MCR3U</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span>
+</div>
+<h3 class="text-lg font-semibold mb-6">Functions</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 uppercase">Credit: 1.0</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">ENG3U</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span>
+</div>
+<h3 class="text-lg font-semibold mb-6">English</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 uppercase">Credit: 1.0</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">ICS3U</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-blue-100 text-blue-700">University</span>
+</div>
+<h3 class="text-lg font-semibold mb-6">Computer Science</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 uppercase">Credit: 1.0</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex justify-between items-start mb-4">
+<span class="text-2xl font-bold text-primary">GWL3O</span>
+<span class="px-2 py-1 rounded text-[10px] font-bold bg-purple-100 text-purple-700">Open</span>
+</div>
+<h3 class="text-lg font-semibold mb-6">Designing Your Future</h3>
+<div class="pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 uppercase">Credit: 1.0</div>
+</div>
+</div>
+</section>
+<!-- ESL Progression Section -->
+<section class="bg-slate-100 dark:bg-slate-900/50 rounded-2xl p-8 lg:p-12">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">ESL Progression Map</h2>
+<p class="text-slate-600 dark:text-slate-400">Step-by-step path from basic English to advanced University preparation.</p>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
+<!-- Progress Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-800 -z-10"></div>
+<!-- ESL Levels -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 w-full md:w-40 text-center shadow-sm">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold">1</div>
+<span class="block font-bold text-primary mb-1">ESLAO</span>
+<span class="text-sm font-medium">Beginning</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 w-full md:w-40 text-center shadow-sm">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">2</div>
+<span class="block font-bold text-slate-900 dark:text-white mb-1">ESLBO</span>
+<span class="text-sm font-medium">Transitional</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 w-full md:w-40 text-center shadow-sm">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">3</div>
+<span class="block font-bold text-slate-900 dark:text-white mb-1">ESLCO</span>
+<span class="text-sm font-medium">Developing</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 w-full md:w-40 text-center shadow-sm">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">4</div>
+<span class="block font-bold text-slate-900 dark:text-white mb-1">ESLDO</span>
+<span class="text-sm font-medium">Expanding</span>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 w-full md:w-40 text-center shadow-sm">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">5</div>
+<span class="block font-bold text-slate-900 dark:text-white mb-1">ESLEO</span>
+<span class="text-sm font-medium">Bridge to English</span>
+</div>
+</div>
+</section>
+<!-- Free & Specialty Section -->
+<div class="grid lg:grid-cols-2 gap-8">
+<section class="bg-gradient-to-br from-primary/10 to-transparent p-8 rounded-2xl border border-primary/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-icons text-primary text-3xl">redeem</span>
+<h2 class="text-2xl font-bold">Free Courses</h2>
+</div>
+<p class="mb-8 text-slate-600 dark:text-slate-400">Complimentary preparation courses to ensure your success in mainstream Ontario curriculum.</p>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-lg flex items-center justify-between">
+<div>
+<span class="text-sm font-bold text-primary block">UPGR-MATH</span>
+<span class="font-semibold">Math Preparation Course</span>
+</div>
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">FREE</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-lg flex items-center justify-between">
+<div>
+<span class="text-sm font-bold text-primary block">UPGR-ENG</span>
+<span class="font-semibold">English Preparation Course</span>
+</div>
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">FREE</span>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-icons text-primary text-3xl">language</span>
+<h2 class="text-2xl font-bold">Languages &amp; Upgrades</h2>
+</div>
+<p class="mb-8 text-slate-600 dark:text-slate-400">Expand your global reach with our accredited language credits and grade improvement paths.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+<span class="block font-bold mb-1">LKBDU</span>
+<span class="text-sm">Mandarin, Level 3</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+<span class="block font-bold mb-1">LWBCU</span>
+<span class="text-sm">Spanish, Level 2</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+<span class="block font-bold mb-1">FSF4U</span>
+<span class="text-sm">Core French</span>
+</div>
+<div class="p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
+<span class="block font-bold mb-1">UPGR-12</span>
+<span class="text-sm">Grade 12 Upgrading</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Coming Soon -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-2xl font-bold">Coming Soon</h2>
+<div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 opacity-60">
+<div class="border-2 border-dashed border-slate-300 dark:border-slate-700 p-6 rounded-xl">
+<span class="text-sm font-bold text-slate-400 mb-2 block">IDC4U</span>
+<h3 class="text-lg font-semibold mb-2">Interdisciplinary Studies</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Fall 2024</span>
+</div>
+<div class="border-2 border-dashed border-slate-300 dark:border-slate-700 p-6 rounded-xl">
+<span class="text-sm font-bold text-slate-400 mb-2 block">AVI4M</span>
+<h3 class="text-lg font-semibold mb-2">Visual Arts</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Fall 2024</span>
+</div>
+<div class="border-2 border-dashed border-slate-300 dark:border-slate-700 p-6 rounded-xl">
+<span class="text-sm font-bold text-slate-400 mb-2 block">ICS4U</span>
+<h3 class="text-lg font-semibold mb-2">Computer Science (Advanced)</h3>
+<span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Winter 2025</span>
+</div>
+</div>
+</section>
+<!-- Tuition Section -->
+<section class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Transparent Tuition</h2>
+<p class="text-slate-600 dark:text-slate-400">Simple, per-course pricing with all materials included.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Domestic -->
+<div class="bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 rounded-2xl p-8 text-center hover:border-primary transition-all">
+<h3 class="text-xl font-bold mb-2">Canadian Students</h3>
+<p class="text-slate-500 text-sm mb-6">Ontario &amp; Rest of Canada</p>
+<div class="text-5xl font-extrabold mb-6">
+<span class="text-2xl align-top font-bold text-primary">$</span>574
+                        <span class="text-base font-medium text-slate-400 uppercase">/Course</span>
+</div>
+<ul class="text-left space-y-3 mb-8 text-sm">
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> 18 months course access</li>
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> OCT certified teachers</li>
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> Digital textbooks included</li>
+</ul>
+<button class="w-full py-3 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all">Select Plan</button>
+</div>
+<!-- International -->
+<div class="bg-slate-900 text-white rounded-2xl p-8 text-center relative overflow-hidden ring-4 ring-primary ring-offset-4 ring-offset-white dark:ring-offset-background-dark">
+<div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold py-1 px-8 rotate-45 translate-x-6 translate-y-2 uppercase">Popular</div>
+<h3 class="text-xl font-bold mb-2">International Students</h3>
+<p class="text-slate-400 text-sm mb-6">Outside Canada</p>
+<div class="text-5xl font-extrabold mb-6">
+<span class="text-2xl align-top font-bold text-primary">$</span>1,224
+                        <span class="text-base font-medium text-slate-500 uppercase">/Course</span>
+</div>
+<ul class="text-left space-y-3 mb-8 text-sm">
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> Study from anywhere worldwide</li>
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> OSSD credit recognized globally</li>
+<li class="flex items-center gap-2"><span class="material-icons text-primary text-sm">check_circle</span> Visa support documentation</li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-primary text-white font-bold hover:bg-red-700 transition-all">Enroll Now</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-300 py-16 mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 lg:col-span-1">
+<div class="flex items-center gap-2 text-white mb-6">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-icons text-sm">school</span>
+</div>
+<span class="text-lg font-bold">Canada e Academy</span>
+</div>
+<p class="text-sm leading-relaxed mb-6">
+                        An inspected Ontario Private School offering secondary school credits for students globally since 2002.
+                    </p>
+<div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
+<span class="text-xs font-bold text-primary block uppercase mb-1">Ministry of Education</span>
+<span class="text-white font-medium">BSID #665804</span>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Quick Links</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Course List</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Graduation Requirements</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Student Handbook</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Support</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Technical Requirements</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Admissions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Teacher Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Connect</h4>
+<div class="flex gap-4 mb-6">
+<a class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons text-xl">facebook</span>
+</a>
+<a class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons text-xl">alternate_email</span>
+</a>
+<a class="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons text-xl">language</span>
+</a>
+</div>
+<p class="text-sm">
+<span class="block text-white font-medium">Email Us</span>
+                        admissions@canadaeacademy.com
+                    </p>
+</div>
+</div>
+<div class="pt-12 border-t border-slate-900 text-center text-xs text-slate-500">
+                © 2024 Canada e Academy. All rights reserved. Ontario Secondary School Credits 100% Online.
+            </div>
+</div>
+</footer>
+</body></html>

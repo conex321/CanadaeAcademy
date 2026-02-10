@@ -1,0 +1,9 @@
+{
+  "url": "https://www.ontariovirtualschool.ca/",
+  "limit": 750,
+  "scrapeOptions": {
+    "formats": ["markdown", "html"],
+    "includeTags": ["img", "video", "iframe", "source"],
+    "onlyMainContent": false
+  }
+}

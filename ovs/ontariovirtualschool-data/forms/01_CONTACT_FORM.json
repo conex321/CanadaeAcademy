@@ -1,0 +1,345 @@
+{
+  "_metadata": {
+    "form_name": "Contact Form",
+    "form_id": "wpcf7-f21440-p15-o1",
+    "source_url": "https://www.ontariovirtualschool.ca/contact-us/",
+    "last_extracted": "2026-01-30",
+    "version": "1.0",
+    "notes": "Main contact form for inquiries - handles student, parent, and general inquiries"
+  },
+  "technology": {
+    "plugin": "Contact Form 7",
+    "platform": "WordPress",
+    "version": "5.x",
+    "submission_method": "AJAX",
+    "handler_endpoint": "/wp-admin/admin-ajax.php",
+    "action_parameter": "wpcf7_submit"
+  },
+  "form_attributes": {
+    "method": "POST",
+    "action": "/contact-us/#wpcf7-f21440-p15-o1",
+    "enctype": "multipart/form-data",
+    "class": "wpcf7-form"
+  },
+  "fields": [
+    {
+      "order": 1,
+      "name": "your-name",
+      "label": "Your Name",
+      "type": "text",
+      "html_tag": "input",
+      "required": true,
+      "validation": {
+        "min_length": 1,
+        "max_length": 255,
+        "pattern": null
+      },
+      "placeholder": "",
+      "default_value": "",
+      "css_class": "wpcf7-form-control wpcf7-text wpcf7-validates-as-required",
+      "aria_label": "Your Name",
+      "error_message": "This field is required."
+    },
+    {
+      "order": 2,
+      "name": "your-email",
+      "label": "Your Email",
+      "type": "email",
+      "html_tag": "input",
+      "required": true,
+      "validation": {
+        "pattern": "email",
+        "min_length": 1,
+        "max_length": 255
+      },
+      "placeholder": "",
+      "default_value": "",
+      "css_class": "wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email",
+      "aria_label": "Your Email",
+      "error_message": "Please enter a valid email address."
+    },
+    {
+      "order": 3,
+      "name": "your-phone",
+      "label": "Your Phone Number",
+      "type": "tel",
+      "html_tag": "input",
+      "required": false,
+      "validation": {
+        "pattern": "phone",
+        "min_length": null,
+        "max_length": 20
+      },
+      "placeholder": "",
+      "default_value": "",
+      "css_class": "wpcf7-form-control wpcf7-tel",
+      "aria_label": "Your Phone Number",
+      "error_message": null
+    },
+    {
+      "order": 4,
+      "name": "user-profile-type",
+      "label": "I am a...",
+      "type": "select",
+      "html_tag": "select",
+      "required": true,
+      "validation": {
+        "must_select": true
+      },
+      "default_value": "",
+      "css_class": "wpcf7-form-control wpcf7-select wpcf7-validates-as-required",
+      "aria_label": "User Profile Type",
+      "error_message": "Please select an option.",
+      "options": [
+        {"value": "", "label": "— Please choose an option —", "disabled": true},
+        {"value": "Student", "label": "Student"},
+        {"value": "Parent/Guardian", "label": "Parent/Guardian"},
+        {"value": "Guidance Counsellor", "label": "Guidance Counsellor"},
+        {"value": "Other", "label": "Other"}
+      ],
+      "triggers_conditional": true,
+      "conditional_targets": ["user-profile-student-name", "user-profile-student-type", "user-profile-student-grade", "user-profile-other"]
+    },
+    {
+      "order": 5,
+      "name": "user-profile-student-name",
+      "label": "Student Name",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "conditional": {
+        "show_when": {
+          "field": "user-profile-type",
+          "values": ["Parent/Guardian"]
+        }
+      },
+      "placeholder": "",
+      "default_value": "",
+      "css_class": "wpcf7-form-control wpcf7-text",
+      "aria_label": "Student Name"
+    },
+    {
+      "order": 6,
+      "name": "user-profile-student-type",
+      "label": "Student Type",
+      "type": "select",
+      "html_tag": "select",
+      "required": false,
+      "conditional": {
+        "show_when": {
+          "field": "user-profile-type",
+          "values": ["Student", "Parent/Guardian"]
+        }
+      },
+      "options": [
+        {"value": "", "label": "— Please choose an option —"},
+        {"value": "Full-Time OVS Student", "label": "Full-Time OVS Student"},
+        {"value": "Part-Time Student", "label": "Part-Time Student"},
+        {"value": "International Student", "label": "International Student"},
+        {"value": "Adult Learner", "label": "Adult Learner"}
+      ],
+      "css_class": "wpcf7-form-control wpcf7-select"
+    },
+    {
+      "order": 7,
+      "name": "user-profile-student-grade",
+      "label": "Student Grade",
+      "type": "select",
+      "html_tag": "select",
+      "required": false,
+      "conditional": {
+        "show_when": {
+          "field": "user-profile-type",
+          "values": ["Student", "Parent/Guardian"]
+        }
+      },
+      "options": [
+        {"value": "", "label": "— Please choose an option —"},
+        {"value": "Grade 8", "label": "Grade 8"},
+        {"value": "Grade 9", "label": "Grade 9"},
+        {"value": "Grade 10", "label": "Grade 10"},
+        {"value": "Grade 11", "label": "Grade 11"},
+        {"value": "Grade 12", "label": "Grade 12"},
+        {"value": "Adult Learner", "label": "Adult Learner"},
+        {"value": "Other", "label": "Other"}
+      ],
+      "css_class": "wpcf7-form-control wpcf7-select"
+    },
+    {
+      "order": 8,
+      "name": "user-profile-other",
+      "label": "Please Specify",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "conditional": {
+        "show_when": {
+          "field": "user-profile-type",
+          "values": ["Other"]
+        }
+      },
+      "placeholder": "Please specify your role",
+      "css_class": "wpcf7-form-control wpcf7-text"
+    },
+    {
+      "order": 9,
+      "name": "contact-reason",
+      "label": "Contact Reason",
+      "type": "select",
+      "html_tag": "select",
+      "required": true,
+      "validation": {
+        "must_select": true
+      },
+      "options": [
+        {"value": "", "label": "— Please choose an option —", "disabled": true},
+        {"value": "Course Information", "label": "Course Information"},
+        {"value": "Guidance/Student Support", "label": "Guidance/Student Support"},
+        {"value": "Technical Support", "label": "Technical Support"},
+        {"value": "International Student Inquiries", "label": "International Student Inquiries"},
+        {"value": "Billing/Payments", "label": "Billing/Payments"},
+        {"value": "Other", "label": "Other"}
+      ],
+      "css_class": "wpcf7-form-control wpcf7-select wpcf7-validates-as-required",
+      "error_message": "Please select a contact reason.",
+      "triggers_conditional": true
+    },
+    {
+      "order": 10,
+      "name": "contact-reason-other",
+      "label": "Please Specify Reason",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "conditional": {
+        "show_when": {
+          "field": "contact-reason",
+          "values": ["Other"]
+        }
+      },
+      "placeholder": "Please specify your reason for contacting us",
+      "css_class": "wpcf7-form-control wpcf7-text"
+    },
+    {
+      "order": 11,
+      "name": "hear-about-us",
+      "label": "How did you hear about us?",
+      "type": "select",
+      "html_tag": "select",
+      "required": false,
+      "options": [
+        {"value": "", "label": "— Please choose an option —"},
+        {"value": "Search Engine (e.g. Google)", "label": "Search Engine (e.g. Google)"},
+        {"value": "Social Media (e.g. Facebook, Twitter, Instagram)", "label": "Social Media (e.g. Facebook, Twitter, Instagram)"},
+        {"value": "Brochure or Printed Materials", "label": "Brochure or Printed Materials"},
+        {"value": "Friends or Family", "label": "Friends or Family"},
+        {"value": "School/Guidance Counsellor", "label": "School/Guidance Counsellor"},
+        {"value": "Another Online School", "label": "Another Online School"},
+        {"value": "Returning Student", "label": "Returning Student"},
+        {"value": "Other", "label": "Other"}
+      ],
+      "css_class": "wpcf7-form-control wpcf7-select"
+    },
+    {
+      "order": 12,
+      "name": "contact-message",
+      "label": "Your Message",
+      "type": "textarea",
+      "html_tag": "textarea",
+      "required": true,
+      "validation": {
+        "min_length": 10,
+        "max_length": 5000
+      },
+      "placeholder": "",
+      "rows": 10,
+      "cols": 40,
+      "css_class": "wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required",
+      "error_message": "Please enter your message."
+    },
+    {
+      "order": 13,
+      "name": "website",
+      "label": "Website",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "hidden": true,
+      "purpose": "honeypot_spam_protection",
+      "notes": "This field is hidden via CSS. If filled, the submission is rejected as spam.",
+      "css_class": "wpcf7-form-control wpcf7-text",
+      "css_display": "none"
+    }
+  ],
+  "submit_button": {
+    "type": "submit",
+    "value": "Send Message",
+    "css_class": "wpcf7-form-control wpcf7-submit",
+    "loading_text": "Sending..."
+  },
+  "behavior": {
+    "submission": {
+      "type": "AJAX",
+      "prevents_page_reload": true,
+      "shows_loading_indicator": true
+    },
+    "validation": {
+      "client_side": true,
+      "server_side": true,
+      "real_time": false,
+      "on_blur": false,
+      "on_submit": true
+    },
+    "on_success": {
+      "action": "show_message",
+      "message": "Thank you for your message. It has been sent.",
+      "message_class": "wpcf7-mail-sent-ok",
+      "reset_form": true,
+      "scroll_to_message": true
+    },
+    "on_error": {
+      "action": "show_errors",
+      "highlight_fields": true,
+      "scroll_to_first_error": true,
+      "error_class": "wpcf7-not-valid"
+    },
+    "spam_detected": {
+      "action": "reject_silently",
+      "show_message": false
+    }
+  },
+  "spam_protection": {
+    "honeypot": {
+      "enabled": true,
+      "field_name": "website"
+    },
+    "recaptcha": {
+      "enabled": false,
+      "version": null
+    },
+    "akismet": {
+      "enabled": false
+    }
+  },
+  "email_notifications": {
+    "admin_notification": {
+      "enabled": true,
+      "recipient": "admin@ontariovirtualschool.ca",
+      "subject": "[OVS Contact] New message from [your-name]",
+      "includes_all_fields": true
+    },
+    "auto_reply": {
+      "enabled": false
+    }
+  },
+  "accessibility": {
+    "aria_labels": true,
+    "error_announcements": true,
+    "focus_management": true,
+    "keyboard_navigation": true
+  },
+  "responsive": {
+    "mobile_friendly": true,
+    "stacked_layout_breakpoint": "768px"
+  }
+}

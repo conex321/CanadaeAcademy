@@ -1,0 +1,35 @@
+{
+  "extraction_date": "2026-01-30T07:59:02.140844",
+  "source_url": "https://www.ontariovirtualschool.ca/",
+  "tool_used": "Firecrawl API v1",
+  "sitemap": {
+    "total_urls": 718,
+    "success": true
+  },
+  "crawl": {
+    "pages_scraped": 750,
+    "status": "completed"
+  },
+  "videos": {
+    "total_found": 133,
+    "by_type": {
+      "vimeo": 119,
+      "vimeo_embed": 2,
+      "youtube": 3,
+      "direct": 9
+    },
+    "direct_downloaded": 9,
+    "youtube_private": 3,
+    "vimeo_private": 121
+  },
+  "images": {
+    "total_found": 2389,
+    "downloaded": 2485
+  },
+  "storage": {
+    "pages_size_mb": 4.33,
+    "images_size_mb": 308.82,
+    "videos_size_mb": 48.22,
+    "total_size_mb": 369.31
+  }
+}

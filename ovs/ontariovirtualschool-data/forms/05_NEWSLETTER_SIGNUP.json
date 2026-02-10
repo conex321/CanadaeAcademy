@@ -1,0 +1,154 @@
+{
+  "_metadata": {
+    "form_name": "Newsletter Signup",
+    "provider": "Mailchimp",
+    "source_url": "https://www.ontariovirtualschool.ca/",
+    "location": "Footer, Newsletter pages",
+    "last_extracted": "2026-01-30",
+    "version": "1.0",
+    "notes": "Mailchimp embedded form for email newsletter subscriptions"
+  },
+  "technology": {
+    "platform": "Mailchimp",
+    "integration_type": "embedded_form",
+    "submission_method": "POST to Mailchimp",
+    "endpoint": "https://ontariovirtualschool.us##.list-manage.com/subscribe/post"
+  },
+  "configuration": {
+    "list_id": "MAILCHIMP_LIST_ID",
+    "double_optin": true,
+    "gdpr_compliant": true
+  },
+  "form_attributes": {
+    "method": "POST",
+    "action": "https://ontariovirtualschool.us##.list-manage.com/subscribe/post?u=XXXXXX&id=XXXXXX",
+    "target": "_blank",
+    "name": "mc-embedded-subscribe-form",
+    "id": "mc-embedded-subscribe-form",
+    "class": "validate"
+  },
+  "fields": [
+    {
+      "order": 1,
+      "name": "EMAIL",
+      "label": "Email Address",
+      "type": "email",
+      "html_tag": "input",
+      "required": true,
+      "validation": {
+        "pattern": "email",
+        "max_length": 255
+      },
+      "placeholder": "Enter your email address",
+      "css_class": "required email",
+      "aria_label": "Email Address",
+      "error_message": "Please enter a valid email address."
+    },
+    {
+      "order": 2,
+      "name": "FNAME",
+      "label": "First Name",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "validation": {
+        "max_length": 50
+      },
+      "placeholder": "First Name (optional)",
+      "css_class": "",
+      "aria_label": "First Name"
+    },
+    {
+      "order": 3,
+      "name": "LNAME",
+      "label": "Last Name",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "validation": {
+        "max_length": 50
+      },
+      "placeholder": "Last Name (optional)",
+      "css_class": "",
+      "aria_label": "Last Name"
+    },
+    {
+      "order": 4,
+      "name": "b_XXXXXX_XXXXXX",
+      "label": "",
+      "type": "text",
+      "html_tag": "input",
+      "required": false,
+      "hidden": true,
+      "purpose": "honeypot_bot_protection",
+      "notes": "Hidden field - if filled, submission is rejected (bot trap)",
+      "tabindex": -1,
+      "value": ""
+    }
+  ],
+  "submit_button": {
+    "type": "submit",
+    "value": "Subscribe",
+    "name": "subscribe",
+    "css_class": "button",
+    "loading_text": "Subscribing..."
+  },
+  "behavior": {
+    "submission": {
+      "type": "form_post",
+      "target": "_blank",
+      "opens_new_tab": true
+    },
+    "double_optin": {
+      "enabled": true,
+      "confirmation_email_sent": true,
+      "requires_click_to_confirm": true
+    },
+    "on_success": {
+      "action": "redirect",
+      "destination": "mailchimp_confirmation_page",
+      "message": "Thanks for subscribing! Please check your email to confirm."
+    },
+    "on_error": {
+      "action": "show_error",
+      "message": "Please enter a valid email address."
+    }
+  },
+  "spam_protection": {
+    "honeypot": {
+      "enabled": true,
+      "field_name": "b_XXXXXX_XXXXXX"
+    },
+    "recaptcha": {
+      "enabled": false
+    }
+  },
+  "gdpr_compliance": {
+    "consent_checkbox": {
+      "enabled": false,
+      "text": null
+    },
+    "privacy_link": {
+      "enabled": true,
+      "url": "/privacy-policy/"
+    }
+  },
+  "email_content": {
+    "frequency": "monthly",
+    "content_types": [
+      "new_course_announcements",
+      "student_success_stories",
+      "educational_tips",
+      "promotional_offers"
+    ]
+  },
+  "footer_placement": {
+    "location": "site_footer",
+    "width": "full_width_or_sidebar",
+    "styling": {
+      "background": "dark",
+      "text_color": "white",
+      "button_color": "primary"
+    }
+  }
+}

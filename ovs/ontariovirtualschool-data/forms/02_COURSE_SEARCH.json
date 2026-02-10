@@ -1,0 +1,157 @@
+{
+  "_metadata": {
+    "form_name": "Course Search & Filter",
+    "form_id": "course-search-autocomplete",
+    "source_url": "https://www.ontariovirtualschool.ca/",
+    "alternate_url": "https://www.ontariovirtualschool.ca/courses/",
+    "last_extracted": "2026-01-30",
+    "version": "1.0",
+    "notes": "React-based course search with Material-UI components - client-side filtering"
+  },
+  "technology": {
+    "framework": "React",
+    "ui_library": "Material-UI (MUI)",
+    "component": "MuiAutocomplete",
+    "submission_method": "client_side",
+    "no_server_requests": true,
+    "state_management": "React useState/useEffect"
+  },
+  "search_component": {
+    "type": "autocomplete",
+    "html_structure": {
+      "container": "<div class=\"MuiAutocomplete-root\">",
+      "input": "<input type=\"search\" class=\"MuiInputBase-input MuiInputBase-inputTypeSearch\" />",
+      "listbox": "<ul class=\"MuiAutocomplete-listbox\" role=\"listbox\">",
+      "option": "<li class=\"MuiAutocomplete-option\" role=\"option\">"
+    },
+    "behavior": {
+      "type_ahead": true,
+      "min_characters": 0,
+      "debounce_ms": 300,
+      "show_all_on_focus": true,
+      "clear_button": true,
+      "keyboard_navigation": true
+    },
+    "search_fields": [
+      "course_name",
+      "course_code",
+      "description",
+      "subject"
+    ]
+  },
+  "filter_components": [
+    {
+      "name": "grade_level",
+      "label": "Grade Level",
+      "type": "multi_select",
+      "component": "MuiSelect",
+      "options": [
+        {"value": "9", "label": "Grade 9"},
+        {"value": "10", "label": "Grade 10"},
+        {"value": "11", "label": "Grade 11"},
+        {"value": "12", "label": "Grade 12"}
+      ],
+      "default_value": [],
+      "allow_multiple": true
+    },
+    {
+      "name": "subject",
+      "label": "Subject",
+      "type": "multi_select",
+      "component": "MuiSelect",
+      "options": [
+        {"value": "math", "label": "Mathematics"},
+        {"value": "science", "label": "Science"},
+        {"value": "english", "label": "English"},
+        {"value": "business", "label": "Business Studies"},
+        {"value": "social_sciences", "label": "Social Sciences"},
+        {"value": "arts", "label": "Arts"},
+        {"value": "health", "label": "Health & Physical Education"},
+        {"value": "technology", "label": "Technology"},
+        {"value": "french", "label": "French"},
+        {"value": "guidance", "label": "Guidance & Career Education"}
+      ],
+      "default_value": [],
+      "allow_multiple": true
+    },
+    {
+      "name": "credit_type",
+      "label": "Credit Type",
+      "type": "multi_select",
+      "component": "MuiSelect",
+      "options": [
+        {"value": "U", "label": "University (U)"},
+        {"value": "C", "label": "College (C)"},
+        {"value": "M", "label": "University/College (M)"},
+        {"value": "O", "label": "Open (O)"}
+      ],
+      "default_value": [],
+      "allow_multiple": true
+    },
+    {
+      "name": "course_type",
+      "label": "Course Type",
+      "type": "single_select",
+      "component": "MuiSelect",
+      "options": [
+        {"value": "all", "label": "All Courses"},
+        {"value": "full", "label": "Full Credit (110 hours)"},
+        {"value": "half", "label": "Half Credit (55 hours)"}
+      ],
+      "default_value": "all",
+      "allow_multiple": false
+    }
+  ],
+  "course_data_structure": {
+    "example": {
+      "id": 123,
+      "code": "SBI3U",
+      "name": "Biology",
+      "full_name": "Biology, Grade 11, University Preparation",
+      "grade": 11,
+      "credit_type": "U",
+      "credits": 1,
+      "subject": "science",
+      "description": "This course furthers students' understanding of the processes...",
+      "prerequisites": "SNC2D",
+      "price": 449,
+      "url": "/courses/biology-grade-11-university-sbi3u/"
+    }
+  },
+  "filtering_logic": {
+    "pseudocode": "filteredCourses = courses.filter(course => {\n  // Search text match\n  const searchMatch = searchTerm === '' || \n    course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||\n    course.code.toLowerCase().includes(searchTerm.toLowerCase());\n  \n  // Grade filter\n  const gradeMatch = selectedGrades.length === 0 || \n    selectedGrades.includes(course.grade.toString());\n  \n  // Subject filter\n  const subjectMatch = selectedSubjects.length === 0 || \n    selectedSubjects.includes(course.subject);\n  \n  // Credit type filter\n  const creditMatch = selectedCredits.length === 0 || \n    selectedCredits.includes(course.credit_type);\n  \n  return searchMatch && gradeMatch && subjectMatch && creditMatch;\n});",
+    "execution": "client_side",
+    "performance": "instant_no_server_call"
+  },
+  "display": {
+    "results_layout": "grid",
+    "cards_per_row": {
+      "desktop": 3,
+      "tablet": 2,
+      "mobile": 1
+    },
+    "card_contents": [
+      "course_code",
+      "course_name",
+      "grade",
+      "credit_type",
+      "price",
+      "view_details_button"
+    ],
+    "empty_state": {
+      "message": "No courses found matching your criteria.",
+      "show_clear_filters": true
+    }
+  },
+  "accessibility": {
+    "aria_labels": true,
+    "keyboard_navigation": true,
+    "screen_reader_announcements": true,
+    "focus_management": true
+  },
+  "responsive": {
+    "mobile_friendly": true,
+    "collapsible_filters": true,
+    "filter_drawer_mobile": true
+  }
+}
