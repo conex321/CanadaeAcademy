@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -128,22 +129,38 @@
 <span class="text-xs font-medium text-slate-500">Message</span>
 </div>
 </div>
-<form action="#" class="space-y-8">
+<!-- Success Banner -->
+<div id="success-banner" class="hidden mb-8 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-3xl mt-0.5">check_circle</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Message Sent Successfully!</h3>
+<p class="text-sm">Thank you for reaching out. Our team will get back to you within 24 hours during business days.</p>
+</div>
+</div>
+<!-- Error Banner -->
+<div id="error-banner" class="hidden mb-8 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-300 p-6 rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400 text-3xl mt-0.5">error</span>
+<div>
+<h3 class="font-bold text-lg mb-1">Something Went Wrong</h3>
+<p id="error-message" class="text-sm">Please try again or email us directly at info@canadaeacademy.ca.</p>
+</div>
+</div>
+<form id="contact-form" class="space-y-8">
 <!-- Step 1: Info -->
 <div class="space-y-6">
 <h2 class="text-2xl font-bold text-deep-blue dark:text-white">Your Information</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">First Name</label>
-<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="e.g. Alex" type="text"/>
+<input id="first-name" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="e.g. Alex" type="text" required/>
 </div>
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Last Name</label>
-<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="e.g. Smith" type="text"/>
+<input id="last-name" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="e.g. Smith" type="text" required/>
 </div>
 <div class="md:col-span-2">
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
-<input class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="alex.smith@example.com" type="email"/>
+<input id="email" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary" placeholder="alex.smith@example.com" type="email" required/>
 </div>
 </div>
 </div>
@@ -153,7 +170,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">I am a...</label>
-<select class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none">
+<select id="role" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none">
 <option value="">Select your role</option>
 <option value="student">Student</option>
 <option value="parent">Parent / Guardian</option>
@@ -163,7 +180,7 @@
 </div>
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">How did you hear about us?</label>
-<select class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none">
+<select id="source" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none">
 <option value="">Select source</option>
 <option value="google">Google Search</option>
 <option value="social">Social Media</option>
@@ -178,7 +195,7 @@
 <h2 class="text-2xl font-bold text-deep-blue dark:text-white">How Can We Help?</h2>
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Inquiry Category</label>
-<select class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none mb-6">
+<select id="category" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary appearance-none mb-6">
 <option value="admissions">Admissions &amp; Registration</option>
 <option value="tuition">Tuition &amp; Fees</option>
 <option value="tech">Technical Support</option>
@@ -188,12 +205,13 @@
 </div>
 <div>
 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Your Message</label>
-<textarea class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary resize-none" placeholder="Tell us more about your request..." rows="5"></textarea>
+<textarea id="message" class="w-full px-4 py-3 rounded-lg border-slate-300 dark:border-zinc-700 dark:bg-zinc-800 focus:ring-primary focus:border-primary resize-none" placeholder="Tell us more about your request..." rows="5"></textarea>
 </div>
 </div>
-<button class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
-                            Send Message
-                            <span class="material-symbols-outlined">send</span>
+<button id="submit-btn" class="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+<span id="submit-text">Send Message</span>
+<span id="submit-spinner" class="hidden animate-spin">⟳</span>
+<span class="material-symbols-outlined" id="submit-icon">send</span>
 </button>
 </form>
 </div>
@@ -354,4 +372,66 @@
 </div>
 </div>
 </footer>
+<script>
+// Supabase Contact Form Integration
+(function() {
+  const SUPABASE_URL = 'https://yezzoegjsdfrmtnmtvtp.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_41tLOVPEfP4EJ8KpXllwMQ_KaAGrPJQ';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  const form = document.getElementById('contact-form');
+  const successBanner = document.getElementById('success-banner');
+  const errorBanner = document.getElementById('error-banner');
+  const errorMessage = document.getElementById('error-message');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitText = document.getElementById('submit-text');
+  const submitSpinner = document.getElementById('submit-spinner');
+  const submitIcon = document.getElementById('submit-icon');
+
+  function setLoading(isLoading) {
+    submitBtn.disabled = isLoading;
+    submitText.textContent = isLoading ? 'Sending...' : 'Send Message';
+    submitSpinner.classList.toggle('hidden', !isLoading);
+    submitIcon.classList.toggle('hidden', isLoading);
+    submitBtn.classList.toggle('opacity-70', isLoading);
+    submitBtn.classList.toggle('cursor-not-allowed', isLoading);
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    successBanner.classList.add('hidden');
+    errorBanner.classList.add('hidden');
+    setLoading(true);
+
+    const payload = {
+      first_name: document.getElementById('first-name').value.trim(),
+      last_name:  document.getElementById('last-name').value.trim(),
+      email:      document.getElementById('email').value.trim(),
+      role:       document.getElementById('role').value || null,
+      source:     document.getElementById('source').value || null,
+      category:   document.getElementById('category').value || null,
+      message:    document.getElementById('message').value.trim() || null,
+    };
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([payload]);
+
+      if (error) throw error;
+
+      form.reset();
+      successBanner.classList.remove('hidden');
+      successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (err) {
+      console.error('Submission error:', err);
+      errorMessage.textContent = err.message || 'Please try again or email us directly at info@canadaeacademy.ca.';
+      errorBanner.classList.remove('hidden');
+      errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
+</script>
 </body></html>
