@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sample Lessons Showcase | Canada e Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#f20d0d",
+                "background-light": "#f8f5f5",
+                "background-dark": "#221010",
+                "deep-blue": "#1a2a44",
+                "soft-gray": "#f1f3f5"
+              },
+              fontFamily: {
+                "display": ["Lexend", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-200">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-10 h-10 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-icons text-2xl">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-lg leading-none tracking-tight">CANADA e ACADEMY</span>
+<span class="text-[10px] uppercase tracking-widest text-primary font-semibold">Ontario Online High School</span>
+</div>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Lessons</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Tuition</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:bg-red-700 transition-all shadow-lg shadow-primary/20">
+                    Register Now
+                </button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+<div class="container mx-auto px-6 relative z-10 text-center">
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">Experience the Future of Learning</span>
+<h1 class="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto leading-tight">
+                    Experience Our <span class="text-primary">Interactive</span> Lessons
+                </h1>
+<p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Say goodbye to boring PDFs. Our lessons feature professional voice narration, immersive animations, and real-time interactive simulations.
+                </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-deep-blue text-white px-8 py-4 rounded-xl font-bold flex items-center space-x-2 hover:scale-105 transition-transform">
+<span class="material-icons">play_circle</span>
+<span>Watch Demo Lesson</span>
+</button>
+<button class="border-2 border-slate-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        View Course Catalog
+                    </button>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Feature Grid -->
+<section class="py-16 bg-soft-gray dark:bg-slate-900/50">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-deep-blue text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-icons">animation</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Narrated Animation</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Engaging visual storytelling paired with professional voiceovers for multi-sensory learning.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-deep-blue text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-icons">biotech</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Simulations</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Complex concepts made simple through interactive labs and virtual experiments.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-deep-blue text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-icons">quiz</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Formative Quizzes</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Knowledge checks built into the lesson to ensure mastery before moving forward.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-deep-blue text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-icons">cloud_download</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Study Guides</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Downloadable summaries and worksheets to reinforce offline learning and review.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lesson Player Mockup -->
+<section class="py-24">
+<div class="container mx-auto px-6">
+<div class="max-w-5xl mx-auto bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border-8 border-slate-900">
+<div class="bg-slate-800 h-10 flex items-center px-4 space-x-2">
+<div class="w-3 h-3 rounded-full bg-red-500"></div>
+<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+<div class="w-3 h-3 rounded-full bg-green-500"></div>
+<div class="flex-1 text-center">
+<span class="text-[10px] text-slate-400 font-medium uppercase tracking-widest">lesson_preview_mhf4u_v2.0</span>
+</div>
+</div>
+<div class="relative group aspect-video">
+<img class="w-full h-full object-cover brightness-75 group-hover:brightness-90 transition-all" data-alt="Screenshot of an animated math lesson on a digital interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0i9ZmR48udntomsYQYqQ5NJprQ5cwlbFU1cST4moADGWdWIXhHOn8RfhV1f0DE3Uok6W_W2l9LWWN7Vpy8gxjPAW5VUJpoXVwpnvLFXAvTbrZBsrb6Bi8kObEViVkzibOMzgxW1kK4lnLu9ER_6PPWRIoR_1IKLEOJZcVo3ZjKCYluFyMMnw6SpbFjePYa0EyChRUFyoWvSspPmWvJFoDbhxkWIB5bcWzw3jQLhvcW2TaXDp8ly48Km7qltn4WVIlhsWgtvCxiNKd"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+<span class="material-icons text-6xl ml-2">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white/80">
+<div class="flex items-center space-x-4">
+<span class="material-icons">volume_up</span>
+<div class="w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+<div class="w-2/3 h-full bg-primary"></div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-icons">closed_caption</span>
+<span class="material-icons">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-slate-500 italic">"The animated lessons make complex calculus feel intuitive. I can't imagine going back to textbooks." — Sarah J., Grade 12 Student</p>
+</div>
+</div>
+</section>
+<!-- Subject Tabs & Preview Cards -->
+<section class="py-24 bg-white dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">Sample Our Courses</h2>
+<p class="text-slate-600 dark:text-slate-400">Filter by subject to see how we teach across the curriculum.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-2 mb-12">
+<button class="px-6 py-2 rounded-full bg-primary text-white font-medium shadow-md shadow-primary/20">All Lessons</button>
+<button class="px-6 py-2 rounded-full bg-soft-gray dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">Mathematics</button>
+<button class="px-6 py-2 rounded-full bg-soft-gray dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">Science</button>
+<button class="px-6 py-2 rounded-full bg-soft-gray dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">English</button>
+<button class="px-6 py-2 rounded-full bg-soft-gray dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">Business</button>
+<button class="px-6 py-2 rounded-full bg-soft-gray dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-medium">Social Sciences</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Math -->
+<div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="relative h-56">
+<img class="w-full h-full object-cover" data-alt="Advanced math formulas on a clean educational background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbxH-76s69zfbLznxdHfL_NTJ4vnJz4I-ybaY5n-aYef2Pqkz6-q3ui81R5B67J1Cn6VbYRM8XKE2SYgfQycOijC3bIFt-obQkizJxUXwIPLVbjzJ2F9XJNsuvQpNEHBCAdj975GUhNH2TV5s4sEg1d9ytiQ3qr6zgS4tWu4ENW1-li00tDZ3Aej3lS1D60vSkvVolrt6H0O_b4T3DK7GJMURQ85VAdvFU8UQZmMRcz7-_BW60KqdRnAaSspOSsDQbE-AOR_aXH6zw"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons text-white text-5xl">play_circle_filled</span>
+</div>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-deep-blue">MHF4U</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Advanced Functions</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Unit 3: Polynomial Functions and their graphical interpretations through animation.</p>
+<button class="w-full py-3 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Preview Lesson</button>
+</div>
+</div>
+<!-- Card 2: Science -->
+<div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="relative h-56">
+<img class="w-full h-full object-cover" data-alt="Biological molecule visualization in a modern laboratory style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAECWc8rr4CKcyAIxtyjKRwOTRsrFFi4oAWfYmJ2bv39L2dGc1khQxIC48F2AGr3h2D9bVeo0crBy0XwxG6xjZx4gwKuuQVDX1W59OUV8hPkKSZS-t0IIAfXQ2aWj2b6mb43IvjhLAbZ_IbwHTDrY9Nj07kAfK7mgrhbiVwt1CUlvnKfaeOQnbgW8jOQzRgI0WY9YTebamCpP3rouCUafSdR3wscXZv2dZXCxJjJcL2MHBsOSeqeZnfWKSfvrQfDl1fFXcli5afAwZ6"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons text-white text-5xl">play_circle_filled</span>
+</div>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-deep-blue">SBI4U</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Biology</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Unit 1: Metabolic Processes. See the cellular journey with interactive narration.</p>
+<button class="w-full py-3 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Preview Lesson</button>
+</div>
+</div>
+<!-- Card 3: English -->
+<div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+<div class="relative h-56">
+<img class="w-full h-full object-cover" data-alt="Classic books and modern writing tools representing English literature" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbk6O3_dlUBcLHf_B8Nc1rtUnbtSvWGubecC-uCkXFNgVtnwVuYie-Mo5iXdIJd2oeiy6g97rjAxmkq3LgGRiNTh6JOD5LRYngjUwyn7DHB_n7t6C0zJ4xQi-_ln719irfPdJ8cGuhKJEJ87RiDIJwDijKh79eCiCjqUjGr4MHqiX4906GshYpZlofcvSrXwILejCAYD-xSTalQgZtYbbNyFro5rxA7UMAEPl_q-GaoKU56P5zbMsP-ApYRQv3C2mDhqtlLj_gg60J"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-icons text-white text-5xl">play_circle_filled</span>
+</div>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded text-xs font-bold text-deep-blue">ENG4U</span>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">English University Prep</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Hamlet: Critical Analysis. Interactive character mapping and thematic breakdowns.</p>
+<button class="w-full py-3 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Preview Lesson</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="py-24 bg-soft-gray dark:bg-slate-900">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-center mb-16">How We're <span class="text-primary">Different</span></h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+<h4 class="text-lg font-bold text-slate-400 mb-6 uppercase tracking-widest">Traditional Online Schools</h4>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<span class="material-icons text-red-400">close</span>
+<span class="text-slate-500">Static, text-heavy PDF lessons</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-red-400">close</span>
+<span class="text-slate-500">Self-taught without audio support</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-red-400">close</span>
+<span class="text-slate-500">Minimal interactivity or engagement</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-red-400">close</span>
+<span class="text-slate-500">Basic multiple choice assessments</span>
+</li>
+</ul>
+</div>
+<div class="bg-deep-blue p-8 rounded-2xl shadow-xl transform scale-105 border-2 border-primary ring-8 ring-primary/5">
+<div class="flex items-center justify-between mb-6">
+<h4 class="text-lg font-bold text-white uppercase tracking-widest">Canada e Academy</h4>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">PREMIUM</span>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<span class="material-icons text-green-400">check_circle</span>
+<span class="text-white/90">Fully animated, high-fidelity lessons</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-green-400">check_circle</span>
+<span class="text-white/90">Professional voice narration on every page</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-green-400">check_circle</span>
+<span class="text-white/90">Interactive labs &amp; 3D simulations</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-green-400">check_circle</span>
+<span class="text-white/90">Integrated formative knowledge checks</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-deep-blue relative overflow-hidden">
+<div class="container mx-auto px-6 relative z-10 text-center">
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Start Your Journey?</h2>
+<p class="text-white/70 text-lg mb-12 max-w-2xl mx-auto">Join thousands of students earning their OSSD with Ontario's most engaging online high school.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-primary hover:bg-red-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/30 transition-all">Enroll Today</button>
+<button class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">Contact Admissions</button>
+</div>
+</div>
+<!-- Background abstraction -->
+<div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+<div class="absolute top-1/2 left-1/4 w-96 h-96 border border-white rounded-full"></div>
+<div class="absolute top-1/3 right-1/4 w-64 h-64 border border-white rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark py-16 border-t border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center space-x-2 mb-6">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-icons text-lg">school</span>
+</div>
+<span class="font-bold text-lg leading-none tracking-tight">CANADA e ACADEMY</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        An Ontario-inspected private high school offering credit courses toward the Ontario Secondary School Diploma (OSSD).
+                    </p>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Quick Links</h5>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Courses List</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sample Lessons</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Student Portal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Technical Support</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Programs</h5>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">University Prep</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mature Students</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">International Students</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Summer School</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Contact</h5>
+<ul class="space-y-4 text-sm">
+<li class="flex items-start space-x-3">
+<span class="material-icons text-primary text-sm">location_on</span>
+<span class="text-slate-500 dark:text-slate-400">Toronto, Ontario, Canada</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-primary text-sm">phone</span>
+<span class="text-slate-500 dark:text-slate-400">+1 (800) 123-4567</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-icons text-primary text-sm">email</span>
+<span class="text-slate-500 dark:text-slate-400">admissions@canadaeacademy.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
+<div class="flex items-center space-x-4 mb-4 md:mb-0">
+<span class="text-xs font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded">MOU BSID #665804</span>
+<span class="text-xs text-slate-500">Ontario Ministry of Education Inspected</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">
+                    © 2024 Canada e Academy. All rights reserved. OSSD Credits issued upon completion.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

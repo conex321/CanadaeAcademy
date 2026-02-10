@@ -38,11 +38,11 @@
 * [x] `how-it-works.html` - 6-step enrollment and learning process guide
 * [x] `courses.html` - Course catalog with grade filters, pricing, ESL section
 * [x] `faq.html` - Comprehensive Q&A across 7 categories
-* [ ] `contact.html` - Multi-channel contact form, live chat, guidance booking
-* [ ] `register.html` - Registration process, pricing, requirements
-* [ ] `ossd-requirements.html` - OSSD graduation pathway reference
-* [ ] `sample-lessons.html` - Interactive lesson showcase and demo
-* [ ] `course-codes.html` - Ontario course coding system reference
+* [x] `contact.html` - Multi-channel contact form, live chat, guidance booking
+* [x] `register.html` - Registration process, pricing, requirements
+* [x] `ossd-requirements.html` - OSSD graduation pathway reference
+* [x] `sample-lessons.html` - Interactive lesson showcase and demo
+* [x] `course-codes.html` - Ontario course coding system reference
 
 ## 5. The Roadmap (Backlog)
 *If `next-prompt.md` is empty or completed, pick the next task from here.*
