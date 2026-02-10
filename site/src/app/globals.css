@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* ── Canada e Academy Design Tokens ── */
+@theme inline {
+  /* Primary — Authoritative Deep Blue */
+  --color-primary-50: #eef0ff;
+  --color-primary-100: #dde2ff;
+  --color-primary-200: #b3baff;
+  --color-primary-300: #7e8afc;
+  --color-primary-400: #4f5de6;
+  --color-primary: #2c3892;
+  --color-primary-600: #232e7a;
+  --color-primary-700: #1b2463;
+  --color-primary-800: #141b4d;
+  --color-primary-900: #0e1338;
+
+  /* Secondary — Canadian Red */
+  --color-secondary-50: #fef2f2;
+  --color-secondary-100: #fee2e2;
+  --color-secondary-200: #fecaca;
+  --color-secondary-300: #f87171;
+  --color-secondary-400: #f43f3f;
+  --color-secondary: #ed1c23;
+  --color-secondary-600: #d41920;
+  --color-secondary-700: #b1151b;
+  --color-secondary-800: #8c1116;
+  --color-secondary-900: #6b0d11;
+
+  /* Surfaces */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-surface: #f8fafc;
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: #f1f5f9;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+
+  /* Semantic */
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #2c3892;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-destructive: #ef4444;
+
+  /* Fonts */
+  --font-heading: var(--font-plus-jakarta);
+  --font-body: var(--font-inter);
+
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-DEFAULT: 0.75rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
