@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
     Shield,
     CheckCircle,
@@ -23,9 +24,16 @@ export default function RegisterPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="bg-gradient-to-br from-primary via-primary-600 to-primary-800 text-white py-20 md:py-28 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <section className="relative min-h-[500px] text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&q=80"
+                    alt="Student registering for courses"
+                    fill
+                    priority
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-800/70" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
                             <GraduationCap className="w-4 h-4 text-secondary" />
@@ -42,7 +50,7 @@ export default function RegisterPage() {
                         </p>
                         <Link
                             href="/courses"
-                            className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             Browse Courses First
                             <ArrowRight className="w-5 h-5" />
@@ -56,8 +64,8 @@ export default function RegisterPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
-                            { icon: Shield, value: "BSID #665804", label: "Ministry Inspected" },
-                            { icon: BookOpen, value: "170+", label: "Courses Available" },
+                            { icon: Shield, value: "BSID Pending", label: "Ontario Private School" },
+                            { icon: BookOpen, value: "75+", label: "Courses Available" },
                             { icon: Users, value: "OCT", label: "Certified Teachers" },
                             { icon: Globe, value: "30+", label: "Countries Served" },
                         ].map((stat) => (
@@ -177,8 +185,8 @@ export default function RegisterPage() {
                             <div
                                 key={plan.title}
                                 className={`rounded-2xl p-8 border ${plan.highlight
-                                        ? "bg-primary text-white border-primary-600"
-                                        : "bg-surface border-border"
+                                    ? "bg-primary text-white border-primary-600"
+                                    : "bg-surface border-border"
                                     }`}
                             >
                                 <h3
@@ -225,9 +233,9 @@ export default function RegisterPage() {
                                 </ul>
                                 <Link
                                     href="/contact"
-                                    className={`block text-center px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5 ${plan.highlight
-                                            ? "bg-secondary hover:bg-secondary-600 text-white"
-                                            : "bg-secondary hover:bg-secondary-600 text-white"
+                                    className={`btn-brand-primary block text-center px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5 ${plan.highlight
+                                        ? "bg-secondary hover:bg-secondary-600 text-white"
+                                        : "bg-secondary hover:bg-secondary-600 text-white"
                                         }`}
                                 >
                                     Register Now
@@ -272,8 +280,15 @@ export default function RegisterPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-gradient-to-r from-secondary to-secondary-600 py-20 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative py-20 text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1627556704302-624286467c65?w=1920&q=80"
+                    alt="Start your journey"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary-600/90" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
                         Ready to Register?
                     </h2>
@@ -283,14 +298,14 @@ export default function RegisterPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             Contact Us
                             <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="/courses"
-                            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
+                            className="btn-brand-outline inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
                         >
                             Browse Courses
                         </Link>

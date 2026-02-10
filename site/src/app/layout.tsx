@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Canada e Academy",
   },
   description:
-    "Canada e Academy is an Ontario Ministry of Education inspected online high school (BSID #665804). Earn your OSSD diploma with 170+ courses, OCT-certified teachers, and interactive animated lessons.",
+    "Canada e Academy is an online private Ontario high school providing global access to high-quality education. Earn your OSSD diploma with 75+ courses, OCT-certified teachers, and interactive animated lessons. BSID Pending.",
   keywords: [
     "OSSD",
     "Ontario online high school",

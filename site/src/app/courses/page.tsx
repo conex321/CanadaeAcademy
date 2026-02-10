@@ -89,7 +89,7 @@ export default function CoursesPage() {
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
                             <BookOpen className="w-4 h-4 text-secondary" />
-                            <span>170+ Ontario Courses</span>
+                            <span>75+ Ontario Courses</span>
                         </div>
                         <h1 className="font-heading text-4xl md:text-5xl font-extrabold leading-tight mb-6">
                             Course

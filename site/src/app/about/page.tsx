@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
     Shield,
     Users,
@@ -13,84 +14,148 @@ import {
     Heart,
     Target,
     Eye,
+    Quote,
 } from "lucide-react";
+import { BrandName } from "@/components/BrandName";
 
 export const metadata: Metadata = {
     title: "About Us",
     description:
-        "Learn about Canada e Academy — an Ontario Ministry of Education inspected online high school (BSID #665804) offering 170+ interactive OSSD courses with OCT-certified teachers.",
+        "Learn about Canada e Academy — an online private Ontario high school providing global access to high-quality education. 75+ interactive OSSD courses with OCT-certified teachers. BSID Pending.",
 };
 
 export default function AboutPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="bg-gradient-to-br from-primary via-primary-600 to-primary-800 text-white py-20 md:py-28 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <section className="relative min-h-[500px] text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=80"
+                    alt="Students collaborating"
+                    fill
+                    priority
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-800/70" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
-                            <Heart className="w-4 h-4 text-secondary" />
-                            <span>Our Story</span>
+                            <Shield className="w-4 h-4 text-secondary" />
+                            <span>Established 2025</span>
                         </div>
                         <h1 className="font-heading text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                            Making Quality Ontario Education
-                            <span className="text-secondary"> Accessible to All</span>
+                            Shaping Futures at
+                            {" "}<BrandName />
                         </h1>
                         <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                            Canada e Academy was founded with a simple mission: to provide
-                            high-quality, accredited Ontario education to students everywhere —
-                            without the barriers of geography, schedule, or circumstance.
+                            An online private Ontario school providing global access
+                            to high-quality high school education. BSID Pending.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* ── Timeline ── */}
+            {/* ── Our Story ── */}
             <section className="bg-white py-20 md:py-28">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        {/* Text Side */}
+                        <div>
+                            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-6">
+                                Our Story
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                                Founded in 2025, Canada e Academy was built with a clear
+                                vision: to break geographical barriers and provide
+                                high-quality, flexible Ontario education to
+                                students anywhere in the world.
+                            </p>
+                            <p className="text-muted-foreground leading-relaxed mb-8">
+                                As we launch globally in 2026, we are building a vibrant
+                                community of local and international students, helping them
+                                pursue admissions to the world&apos;s top universities through
+                                a rigorous yet supportive virtual environment.
+                            </p>
+                            <blockquote className="border-l-4 border-secondary pl-6 py-2 bg-secondary-50 rounded-r-xl">
+                                <p className="text-primary font-medium italic leading-relaxed">
+                                    &ldquo;We don&apos;t just teach courses; we mentor the next
+                                    generation of global leaders, ensuring every course is a
+                                    stepping stone to their dream career.&rdquo;
+                                </p>
+                            </blockquote>
+                        </div>
+                        {/* Image Side */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] img-hover-zoom glow-on-hover">
+                            <Image
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
+                                alt="Students collaborating online"
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Timeline ── */}
+            <section className="bg-surface py-20 md:py-28">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-4">
                         Our Journey
                     </h2>
-                    <div className="space-y-12">
+                    <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+                        Building the future of online education from Ontario to the world
+                    </p>
+
+                    <div className="grid md:grid-cols-4 gap-8">
                         {[
                             {
-                                year: "Founded",
-                                title: "A Vision Begins",
+                                year: "2025",
+                                title: "Founded",
                                 description:
-                                    "Canada e Academy was established with the goal of bringing Ontario's world-class education online, making it accessible to students across the globe.",
+                                    "Established as an Ontario private school with a mission to deliver quality education globally.",
+                                icon: Shield,
                             },
                             {
-                                year: "Inspected",
-                                title: "Ministry of Education Inspection",
+                                year: "2026",
+                                title: "Global Launch",
                                 description:
-                                    "Successfully inspected by the Ontario Ministry of Education, receiving our Board School Identification (BSID #665804) — confirming our curriculum meets Ontario standards.",
+                                    "Opening doors to students worldwide with 75+ interactive OSSD courses.",
+                                icon: Globe,
                             },
                             {
-                                year: "Growing",
-                                title: "Expanding Our Reach",
+                                year: "2026",
+                                title: "BSID Application",
                                 description:
-                                    "Our catalogue has grown to 170+ courses serving students from over 30 countries. We continue to innovate with interactive animated lessons and ICE-based assessments.",
+                                    "In the process of obtaining our Board School Identification (BSID) from the Ontario Ministry of Education.",
+                                icon: Award,
                             },
-                        ].map((item, i) => (
-                            <div key={i} className="flex gap-8 items-start">
-                                <div className="hidden md:flex flex-col items-center">
-                                    <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center text-white font-extrabold text-xs shadow-md">
-                                        {item.year}
-                                    </div>
-                                    {i < 2 && <div className="w-0.5 h-16 bg-border mt-4" />}
+                            {
+                                year: "The Future",
+                                title: "Worldwide Reach",
+                                description:
+                                    "Growing to serve students across every continent with recognized Ontario credits.",
+                                icon: Star,
+                            },
+                        ].map((milestone, index) => (
+                            <div key={milestone.year} className="relative text-center group">
+                                {/* Connector line */}
+                                {index < 3 && (
+                                    <div className="hidden md:block absolute top-8 left-[60%] w-full h-0.5 bg-border" />
+                                )}
+                                <div className="w-16 h-16 bg-secondary text-white rounded-2xl flex items-center justify-center mx-auto mb-4 font-extrabold text-sm shadow-md relative z-10 group-hover:scale-110 transition-transform">
+                                    <milestone.icon className="w-7 h-7" />
                                 </div>
-                                <div className="flex-1">
-                                    <div className="md:hidden inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
-                                        {item.year}
-                                    </div>
-                                    <h3 className="font-heading text-xl font-bold text-primary mb-2">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-muted-foreground leading-relaxed">
-                                        {item.description}
-                                    </p>
-                                </div>
+                                <span className="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+                                    {milestone.year}
+                                </span>
+                                <h3 className="font-heading text-lg font-bold text-primary mb-2">
+                                    {milestone.title}
+                                </h3>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {milestone.description}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -98,66 +163,56 @@ export default function AboutPage() {
             </section>
 
             {/* ── What Makes Us Different ── */}
-            <section className="bg-surface py-20 md:py-28">
+            <section className="bg-white py-20 md:py-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-4">
-                        What Makes Us Different
-                    </h2>
-                    <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-                        We're not your average online school. Here's what sets Canada e
-                        Academy apart from the rest.
-                    </p>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="text-center mb-16">
+                        <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                            What Makes Us Different
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            We combine traditional academic excellence with modern
+                            technological delivery.
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             {
                                 icon: Monitor,
-                                title: "Interactive Animated Lessons",
+                                title: "Interactive Lessons",
                                 description:
-                                    "Our lessons feature professional narration, simulations, and interactive elements — not boring PDFs or wall-of-text modules.",
-                            },
-                            {
-                                icon: Shield,
-                                title: "Ministry Inspected",
-                                description:
-                                    "We hold BSID #665804 following a thorough Ontario Ministry of Education inspection — your credits are fully recognized.",
+                                    "Engaging multimedia content that goes beyond simple PDFs and videos.",
                             },
                             {
                                 icon: Users,
-                                title: "OCT-Certified Teachers",
+                                title: "OCT Teachers",
                                 description:
-                                    "Every instructor holds certification from the Ontario College of Teachers with real classroom experience.",
+                                    "All courses are taught and graded by certified Ontario educators.",
                             },
                             {
                                 icon: BookOpen,
-                                title: "ICE-Based Assessment",
+                                title: "75+ Courses",
                                 description:
-                                    "Our assessment model evaluates Ideas, Communication, and Expression — providing balanced, meaningful evaluation.",
-                            },
-                            {
-                                icon: Globe,
-                                title: "Global Accessibility",
-                                description:
-                                    "Students from 30+ countries study with us. All you need is a computer and internet connection.",
+                                    "A wide variety of University and College preparation courses available.",
                             },
                             {
                                 icon: Award,
-                                title: "Transparent Pricing",
+                                title: "Varied Assessment",
                                 description:
-                                    "No hidden fees. Domestic students pay $574 per course, international students $1,224 — all-inclusive.",
+                                    "Balanced testing including projects, discussions, and proctored exams.",
                             },
-                        ].map((feature) => (
+                        ].map((item) => (
                             <div
-                                key={feature.title}
-                                className="bg-white rounded-xl p-8 shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all"
+                                key={item.title}
+                                className="bg-surface rounded-xl p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all text-center"
                             >
-                                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-5">
-                                    <feature.icon className="w-7 h-7 text-primary" />
+                                <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                                    <item.icon className="w-8 h-8 text-primary" />
                                 </div>
-                                <h3 className="font-heading text-xl font-bold text-primary mb-3">
-                                    {feature.title}
+                                <h3 className="font-heading text-lg font-bold text-primary mb-3">
+                                    {item.title}
                                 </h3>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    {feature.description}
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {item.description}
                                 </p>
                             </div>
                         ))}
@@ -165,180 +220,175 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* ── Ministry Section ── */}
-            <section className="bg-primary text-white py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* ── Ontario Private School Banner ── */}
+            <section className="relative py-20 overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=60"
+                    alt="Learning environment"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-primary/90" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6 text-white">
                                 <Shield className="w-4 h-4 text-secondary" />
-                                <span>Official Recognition</span>
+                                <span>BSID Pending</span>
                             </div>
-                            <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-6">
-                                Ontario Ministry of Education Inspected
+                            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-white mb-6">
+                                Ontario Private School
                             </h2>
-                            <p className="text-white/80 text-lg leading-relaxed mb-6">
-                                Canada e Academy is inspected by the Ontario Ministry of
-                                Education. Our Board School Identification (BSID) number is
-                                665804. This means our curriculum, teaching standards, and
-                                assessment practices meet the requirements set by the province
-                                of Ontario.
+                            <p className="text-white/80 leading-relaxed mb-6">
+                                Canada e Academy follows the Ontario Ministry of Education
+                                curriculum as a registered private school. Our courses are
+                                designed to meet all requirements for credit granting upon
+                                BSID authorization.
                             </p>
                             <ul className="space-y-3">
                                 {[
-                                    "Curriculum follows Ontario guidelines",
-                                    "Credits recognized by all post-secondary institutions",
-                                    "Regular Ministry compliance reviews",
-                                    "Official Ontario Student Transcripts (OST) issued",
+                                    "Official Ontario Student Transcripts (OST)",
+                                    "Credits recognized by all Canadian universities",
+                                    "OUAC/OCAS direct submission",
+                                    "Letters of Acceptance for visa applications",
                                 ].map((item) => (
-                                    <li key={item} className="flex items-start gap-3">
-                                        <CheckCircle className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                                    <li key={item} className="flex items-center gap-3 text-white">
+                                        <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
                                         <span className="text-white/90">{item}</span>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                            <div className="text-center">
-                                <Shield className="w-20 h-20 text-secondary mx-auto mb-4" />
-                                <h3 className="font-heading text-2xl font-bold mb-2">
-                                    BSID #665804
-                                </h3>
-                                <p className="text-white/70 mb-6">
-                                    Ontario Ministry of Education
-                                </p>
-                                <div className="grid grid-cols-2 gap-4 text-center">
-                                    <div className="bg-white/10 rounded-lg p-4">
-                                        <span className="block text-2xl font-bold text-secondary">
-                                            170+
-                                        </span>
-                                        <span className="text-sm text-white/70">Courses</span>
-                                    </div>
-                                    <div className="bg-white/10 rounded-lg p-4">
-                                        <span className="block text-2xl font-bold text-secondary">
-                                            30+
-                                        </span>
-                                        <span className="text-sm text-white/70">Countries</span>
-                                    </div>
+                        <div className="grid grid-cols-2 gap-6 text-center">
+                            {[
+                                { value: "75+", label: "Courses" },
+                                { value: "30+", label: "Countries" },
+                                { value: "100%", label: "Online Learning" },
+                                { value: "OCT", label: "Certified Teachers" },
+                            ].map((stat) => (
+                                <div
+                                    key={stat.label}
+                                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                                >
+                                    <span className="text-3xl font-extrabold text-white block mb-1">
+                                        {stat.value}
+                                    </span>
+                                    <span className="text-sm text-white/70">{stat.label}</span>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* ── Mission & Vision ── */}
-            <section className="bg-white py-20 md:py-28">
+            <section className="bg-surface py-20 md:py-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-12">
-                        <div className="bg-surface rounded-2xl p-10 border border-border">
-                            <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-6">
-                                <Target className="w-7 h-7 text-primary" />
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="bg-white rounded-2xl p-10 shadow-sm border border-border hover:shadow-lg transition-all">
+                            <div className="w-16 h-16 bg-secondary-50 rounded-2xl flex items-center justify-center mb-6">
+                                <Target className="w-8 h-8 text-secondary" />
                             </div>
                             <h3 className="font-heading text-2xl font-bold text-primary mb-4">
                                 Our Mission
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                To provide accessible, high-quality Ontario education to every
-                                student — regardless of their location, background, or
-                                circumstances — through innovative technology and dedicated
-                                OCT-certified teachers.
+                                To empower students globally by providing an accessible,
+                                high-quality Ontario education that inspires lifelong learning,
+                                academic integrity, and personal growth. We strive to create a
+                                digital classroom that is as rigorous as it is supportive.
                             </p>
                         </div>
-                        <div className="bg-surface rounded-2xl p-10 border border-border">
-                            <div className="w-14 h-14 bg-secondary-50 rounded-xl flex items-center justify-center mb-6">
-                                <Eye className="w-7 h-7 text-secondary" />
+                        <div className="bg-white rounded-2xl p-10 shadow-sm border border-border hover:shadow-lg transition-all">
+                            <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mb-6">
+                                <Eye className="w-8 h-8 text-primary" />
                             </div>
                             <h3 className="font-heading text-2xl font-bold text-primary mb-4">
                                 Our Vision
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                To be the most trusted and innovative online high school in
-                                Canada — setting the standard for engaging digital education
-                                that prepares students for success in university and beyond.
+                                To be the world&apos;s most trusted online high school,
+                                recognized for our innovation in digital pedagogy and our
+                                success in bridging the gap between high school and the
+                                world&apos;s most prestigious universities.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ── By the Numbers ── */}
-            <section className="bg-surface py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-16">
-                        By the Numbers
-                    </h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {[
-                            { value: "170+", label: "Courses Available" },
-                            { value: "30+", label: "Countries Served" },
-                            { value: "OCT", label: "Certified Teachers" },
-                            { value: "24/7", label: "Course Access" },
-                        ].map((stat) => (
-                            <div
-                                key={stat.label}
-                                className="text-center bg-white rounded-xl p-8 shadow-sm border border-border"
-                            >
-                                <span className="block text-3xl md:text-4xl font-extrabold text-secondary mb-2">
-                                    {stat.value}
-                                </span>
-                                <span className="text-muted-foreground font-medium">
-                                    {stat.label}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Student Reviews ── */}
+            {/* ── Voices of Success ── */}
             <section className="bg-white py-20 md:py-28">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-16">
-                        What Students Say
-                    </h2>
+                    <div className="text-center mb-16">
+                        <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                            Voices of Success
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Hear from our students across the globe
+                        </p>
+                    </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                quote:
-                                    "The interactive animated lessons made learning so much more engaging than any other online school I tried. I actually looked forward to studying!",
                                 name: "Sarah M.",
-                                location: "Ontario, Canada",
+                                context: "Competitive Swimmer, Ontario",
+                                quote:
+                                    "The flexibility of Canada e Academy lets me work through my Grade 12 Advanced Functions while traveling for competitive swimming. My teacher is incredibly responsive!",
+                                image:
+                                    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
                             },
                             {
+                                name: "James K.",
+                                context: "International Student, South Korea",
                                 quote:
-                                    "As an international student, Canada e Academy made earning my OSSD straightforward and stress-free. The teachers were always available to help.",
-                                name: "Ahmed R.",
-                                location: "Dubai, UAE",
+                                    "As an international student, studying for my OSSD credits online is the best decision I've made. The platform is very easy to navigate and the content is very high quality.",
+                                image:
+                                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
                             },
                             {
+                                name: "Priya D.",
+                                context: "Credit Upgrade, Toronto",
                                 quote:
-                                    "I needed to upgrade my marks for university applications. The flexible schedule let me work at my own pace and achieve the grades I needed.",
-                                name: "Jessica L.",
-                                location: "British Columbia, Canada",
+                                    "I'm upgrading my English mark for university applications. The feedback from my instructor is detailed and really helping me improve my writing style.",
+                                image:
+                                    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
                             },
-                        ].map((review) => (
+                        ].map((testimonial) => (
                             <div
-                                key={review.name}
-                                className="bg-surface rounded-xl p-8 border border-border"
+                                key={testimonial.name}
+                                className="bg-surface rounded-2xl p-8 border border-border hover:shadow-lg transition-all relative"
                             >
-                                <div className="flex gap-1 mb-4">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                                <Quote className="w-10 h-10 text-primary-100 absolute top-6 right-6" />
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-secondary flex-shrink-0">
+                                        <Image
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            fill
+                                            className="object-cover"
                                         />
-                                    ))}
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-primary">
+                                            {testimonial.name}
+                                        </h4>
+                                        <p className="text-sm text-muted-foreground">
+                                            {testimonial.context}
+                                        </p>
+                                        <div className="flex gap-0.5 mt-1">
+                                            {Array.from({ length: 5 }).map((_, i) => (
+                                                <Star
+                                                    key={i}
+                                                    className="w-4 h-4 text-yellow-400 fill-yellow-400"
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                                <p className="text-muted-foreground leading-relaxed mb-6 italic">
-                                    "{review.quote}"
+                                <p className="text-muted-foreground leading-relaxed italic">
+                                    &ldquo;{testimonial.quote}&rdquo;
                                 </p>
-                                <div>
-                                    <span className="font-bold text-primary">{review.name}</span>
-                                    <span className="block text-sm text-muted-foreground">
-                                        {review.location}
-                                    </span>
-                                </div>
                             </div>
                         ))}
                     </div>
@@ -346,25 +396,33 @@ export default function AboutPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-gradient-to-r from-secondary to-secondary-600 py-20 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative py-20 text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1627556704302-624286467c65?w=1920&q=80"
+                    alt="Graduation celebration"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary-600/90" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
-                        Ready to Join Canada e Academy?
+                        Ready to Start Your Journey?
                     </h2>
                     <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                        Start your journey toward an Ontario Secondary School Diploma today.
+                        Join our global community of students and earn your Ontario
+                        Secondary School Diploma with Canada e Academy.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/register"
-                            className="inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             Register Now
                             <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
+                            className="btn-brand-outline inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
                         >
                             Contact Us
                         </Link>

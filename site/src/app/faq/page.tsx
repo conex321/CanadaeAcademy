@@ -25,11 +25,11 @@ const faqCategories = [
         questions: [
             {
                 q: "What is Canada e Academy?",
-                a: "Canada e Academy is an Ontario Ministry of Education inspected online high school (BSID #665804). We offer 170+ Ontario curriculum courses taught by OCT-certified teachers through interactive animated lessons.",
+                a: "Canada e Academy is an online private Ontario high school providing global access to high-quality education. We offer 75+ Ontario curriculum courses taught by OCT-certified teachers through interactive animated lessons. BSID Pending.",
             },
             {
                 q: "Is Canada e Academy accredited?",
-                a: "Canada e Academy is inspected by the Ontario Ministry of Education. Our Board School Identification (BSID) number is 665804. This means our curriculum, assessment practices, and teaching standards meet Ontario's requirements. Credits earned at our school are fully recognized.",
+                a: "Canada e Academy is an online private Ontario school currently in the process of obtaining its Board School Identification (BSID) from the Ontario Ministry of Education. Our curriculum, assessment practices, and teaching standards are designed to meet Ontario's requirements. BSID Pending.",
             },
             {
                 q: "Who teaches the courses?",
@@ -94,7 +94,7 @@ const faqCategories = [
             },
             {
                 q: "Are your credits recognized by universities?",
-                a: "Absolutely. Because we are inspected by the Ontario Ministry of Education, credits earned at Canada e Academy are fully recognized by universities and colleges across Canada, the United States, and internationally.",
+                a: "Our courses follow the Ontario curriculum and are taught by OCT-certified teachers. Once our BSID is granted, credits earned at Canada e Academy will be fully recognized by universities and colleges across Canada, the United States, and internationally.",
             },
         ],
     },

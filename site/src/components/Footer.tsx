@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Leaf, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { BrandName } from "./BrandName";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -8,20 +10,23 @@ export function Footer() {
         <footer className="bg-primary-900 text-white pt-20 pb-10 border-t border-white/10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                    {/* Brand */}
+                    {/* Brand — full logo with icon + text */}
                     <div className="space-y-6">
-                        <div className="flex items-center gap-2">
-                            <Leaf className="w-7 h-7 text-secondary fill-secondary" />
-                            <span className="font-bold text-xl tracking-tight">
-                                CANADA e ACADEMY
-                            </span>
-                        </div>
+                        <Link href="/">
+                            <Image
+                                src="/images/CanadaeAcademy - Logo plus One Liner - 250 x 100 px.svg"
+                                alt="Canada e Academy — Canadian Online High School"
+                                width={200}
+                                height={80}
+                                className="h-14 w-auto brightness-0 invert"
+                            />
+                        </Link>
                         <p className="text-slate-400 text-sm leading-relaxed">
                             Your Path. Your Pace. Your Future.
                         </p>
                         <p className="text-slate-400 text-sm leading-relaxed">
-                            An Ontario Ministry of Education Inspected Private School providing
-                            global access to high-quality high school education since 2010.
+                            An online private Ontario school providing global access to
+                            high-quality high school education since 2025.
                         </p>
                         <div className="flex gap-3">
                             <a
@@ -131,9 +136,7 @@ export function Footer() {
                 {/* Bottom */}
                 <div className="pt-10 border-t border-white/10 text-center">
                     <p className="text-slate-500 text-xs mb-4">
-                        Canada e Academy BSID #665804. Inspected by the Ontario Ministry of
-                        Education. Authorised to grant credits toward the Ontario Secondary
-                        School Diploma (OSSD).
+                        Canada e Academy is an online private Ontario school. BSID Pending.
                     </p>
                     <p className="text-slate-500 text-xs">
                         © {currentYear} Canada e Academy. All Rights Reserved.

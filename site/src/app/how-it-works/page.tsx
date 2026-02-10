@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
     BookOpen,
     UserPlus,
@@ -12,275 +13,308 @@ import {
     Clock,
     Globe,
     Laptop,
-    Wifi,
     FileText,
+    Calendar,
+    Play,
+    Download,
+    MessageSquare,
+    Zap,
+    Timer,
+    Rocket,
 } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "How It Works",
     description:
-        "Learn how Canada e Academy works — from choosing courses to earning Ontario high school credits. Self-paced, interactive, and fully online with OCT-certified teachers.",
+        "Learn how Canada e Academy works — from registration to earning Ontario high school credits. Interactive animated lessons, flexible scheduling, and OCT-certified teachers.",
 };
 
 export default function HowItWorksPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="bg-gradient-to-br from-primary via-primary-600 to-primary-800 text-white py-20 md:py-28 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <section className="relative min-h-[500px] text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1920&q=80"
+                    alt="Student studying online"
+                    fill
+                    priority
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary-800/70" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
                             <Shield className="w-4 h-4 text-secondary" />
-                            <span>Simple 6-Step Process</span>
+                            <span>Simple 4-Step Process</span>
                         </div>
                         <h1 className="font-heading text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                            How Canada e Academy
-                            <span className="text-secondary"> Works</span>
+                            Your Path to an Ontario
+                            <span className="text-secondary"> High School Diploma</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-8">
-                            From registration to earning your Ontario high school credit —
-                            here's exactly how our self-paced online learning process works.
+                        <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                            From registration to earning credits — our streamlined process
+                            makes it easy to study on your own schedule.
                         </p>
-                        <Link
-                            href="/register"
-                            className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
-                        >
-                            Get Started Today
-                            <ArrowRight className="w-5 h-5" />
-                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* ── Steps ── */}
+            {/* ── Step 1: Register ── */}
             <section className="bg-white py-20 md:py-28">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-4">
-                        Your Learning Journey
-                    </h2>
-                    <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-                        Follow these six simple steps to earn Ontario high school credits
-                        from anywhere in the world.
-                    </p>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <span className="inline-block bg-secondary text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+                            Step 1
+                        </span>
+                        <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                            Register Online
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Select your course, complete registration, and gain access to our
+                            Learning Management System within 24 hours.
+                        </p>
+                    </div>
 
-                    <div className="space-y-12">
+                    {/* Pricing Cards */}
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+                        {/* Canadian Students */}
+                        <div className="bg-surface rounded-2xl p-8 border-2 border-border hover:border-primary transition-colors relative overflow-hidden">
+                            <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
+                            <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-4">
+                                <Shield className="w-6 h-6 text-primary" />
+                            </div>
+                            <h3 className="font-heading text-xl font-bold text-primary mb-2">
+                                Canadian Students
+                            </h3>
+                            <div className="flex items-baseline gap-1 mb-6">
+                                <span className="text-4xl font-extrabold text-primary">$574</span>
+                                <span className="text-muted-foreground">/course</span>
+                            </div>
+                            <ul className="space-y-3 mb-8">
+                                {[
+                                    "Includes all digital materials",
+                                    "Ontario certified teachers",
+                                    "OUAC/OCAS submission",
+                                    "24/7 LMS access",
+                                    "Personalized feedback",
+                                ].map((item) => (
+                                    <li key={item} className="flex items-center gap-3 text-sm">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                        <span className="text-muted-foreground">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <Link
+                                href="/register"
+                                className="btn-brand-primary block text-center bg-primary hover:bg-primary-600 text-white py-3 rounded-xl font-bold transition-colors"
+                            >
+                                Register Now
+                            </Link>
+                        </div>
+
+                        {/* International Students */}
+                        <div className="bg-surface rounded-2xl p-8 border-2 border-secondary shadow-lg relative overflow-hidden">
+                            <div className="absolute top-0 left-0 right-0 h-1 bg-secondary" />
+                            <div className="absolute top-4 right-4">
+                                <span className="bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    GLOBAL
+                                </span>
+                            </div>
+                            <div className="w-12 h-12 bg-secondary-50 rounded-xl flex items-center justify-center mb-4">
+                                <Globe className="w-6 h-6 text-secondary" />
+                            </div>
+                            <h3 className="font-heading text-xl font-bold text-primary mb-2">
+                                Global Students
+                            </h3>
+                            <div className="flex items-baseline gap-1 mb-6">
+                                <span className="text-4xl font-extrabold text-primary">
+                                    $1,224
+                                </span>
+                                <span className="text-muted-foreground">/course</span>
+                            </div>
+                            <ul className="space-y-3 mb-8">
+                                {[
+                                    "Global credit transfer support",
+                                    "24/7 Portal Access",
+                                    "Dedicated International Advisor",
+                                    "Visa documentation support",
+                                    "Online proctoring options",
+                                ].map((item) => (
+                                    <li key={item} className="flex items-center gap-3 text-sm">
+                                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                        <span className="text-muted-foreground">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                            <Link
+                                href="/register"
+                                className="btn-brand-primary block text-center bg-secondary hover:bg-secondary-600 text-white py-3 rounded-xl font-bold transition-colors"
+                            >
+                                Register Now
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Step 2: Start Learning ── */}
+            <section className="bg-surface py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <span className="inline-block bg-secondary text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+                                Step 2
+                            </span>
+                            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                                Start Learning
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed mb-8">
+                                Gain access to our state-of-the-art Learning Management System
+                                (LMS) within 24 hours of registration. Your course content is
+                                rich, engaging, and interactive.
+                            </p>
+                            <div className="grid grid-cols-2 gap-4">
+                                {[
+                                    {
+                                        icon: Play,
+                                        title: "Video Lessons",
+                                        description: "HD instructional videos",
+                                    },
+                                    {
+                                        icon: Zap,
+                                        title: "Animations",
+                                        description: "Visualizing complex concepts",
+                                    },
+                                    {
+                                        icon: ClipboardCheck,
+                                        title: "Quizzes",
+                                        description: "Instant feedback on modules",
+                                    },
+                                    {
+                                        icon: Download,
+                                        title: "Downloads",
+                                        description: "Offline study materials",
+                                    },
+                                ].map((feature) => (
+                                    <div
+                                        key={feature.title}
+                                        className="bg-white rounded-xl p-5 border border-border"
+                                    >
+                                        <feature.icon className="w-6 h-6 text-secondary mb-2" />
+                                        <h4 className="font-bold text-primary text-sm mb-1">
+                                            {feature.title}
+                                        </h4>
+                                        <p className="text-xs text-muted-foreground">
+                                            {feature.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] img-hover-zoom glow-on-hover">
+                            <Image
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80"
+                                alt="Interactive online learning platform"
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Step 3: Submit Assessments ── */}
+            <section className="bg-white py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] order-2 lg:order-1 img-hover-zoom glow-on-hover">
+                            <Image
+                                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80"
+                                alt="Student completing assessment"
+                                fill
+                                className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                        </div>
+                        <div className="order-1 lg:order-2">
+                            <span className="inline-block bg-secondary text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+                                Step 3
+                            </span>
+                            <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                                Submit Assessments
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                                Complete assignments and unit tests through the portal. Our
+                                Ontario Certified Teachers provide comprehensive feedback and
+                                grading within 24-48 business hours.
+                            </p>
+                            <div className="bg-secondary-50 border border-secondary-100 rounded-xl p-5 flex items-start gap-4">
+                                <MessageSquare className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="font-bold text-primary text-sm mb-1">
+                                        Fast Feedback Loop
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground">
+                                        Personalized critiques to help you improve before the next
+                                        assessment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Step 4: Final Evaluation ── */}
+            <section className="bg-surface py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <span className="inline-block bg-secondary text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4">
+                            Step 4
+                        </span>
+                        <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                            Final Evaluation
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            All Ontario credit courses require a final evaluation. We make
+                            this secure and accessible wherever you are located.
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {[
                             {
-                                step: 1,
-                                icon: BookOpen,
-                                title: "Choose Your Course",
+                                icon: Shield,
+                                title: "Proctoring",
                                 description:
-                                    "Browse our catalogue of 170+ Ontario high school courses. Use course codes to find exactly what you need — from Grade 9 to Grade 12, across all pathways (University, College, Open, Workplace).",
-                                details: [
-                                    "Filter by grade level, subject, or pathway",
-                                    "Review detailed course descriptions and outlines",
-                                    "Check prerequisites before enrolling",
-                                ],
+                                    "Final exams must be supervised by an approved proctor (teacher, librarian, or professional) to maintain academic integrity.",
                             },
                             {
-                                step: 2,
-                                icon: UserPlus,
-                                title: "Register Online",
+                                icon: Calendar,
+                                title: "Flexible Scheduling",
                                 description:
-                                    "Complete our online registration form with your student information and course selection. Payment is processed securely during registration.",
-                                details: [
-                                    "Domestic students: $574 per course",
-                                    "International students: $1,224 per course",
-                                    "Secure online payment processing",
-                                ],
+                                    "Book your exam date at least 5 days in advance once you have completed all previous assessments in the course.",
                             },
                             {
-                                step: 3,
-                                icon: Monitor,
-                                title: "Start Learning",
+                                icon: Globe,
+                                title: "Remote Options",
                                 description:
-                                    "Once registered, you'll receive access to your course within 24 hours. All courses feature interactive animated lessons with professional narration — not just PDFs.",
-                                details: [
-                                    "24/7 access to course content",
-                                    "Interactive animated lessons with audio",
-                                    "Self-paced — study on your schedule",
-                                ],
-                            },
-                            {
-                                step: 4,
-                                icon: ClipboardCheck,
-                                title: "Submit Assessments",
-                                description:
-                                    "Complete assignments and assessments throughout the course. Our ICE-based evaluation model assesses your Ideas, Communication, and Expression for balanced, meaningful feedback.",
-                                details: [
-                                    "Regular formative assessments",
-                                    "ICE-based evaluation framework",
-                                    "Detailed feedback from OCT-certified teachers",
-                                ],
-                            },
-                            {
-                                step: 5,
-                                icon: FileText,
-                                title: "Final Evaluation",
-                                description:
-                                    "Complete your final summative assessment — typically worth 30% of your final grade. This may be a culminating activity, exam, or project depending on the course.",
-                                details: [
-                                    "30% of final grade",
-                                    "Culminating activity or final exam",
-                                    "Proctored as required by Ministry guidelines",
-                                ],
-                            },
-                            {
-                                step: 6,
-                                icon: GraduationCap,
-                                title: "Earn Your Credit",
-                                description:
-                                    "Upon successful completion, your Ontario credit is recorded on your Official Ontario Student Transcript (OST). Credits are recognized by all post-secondary institutions in Canada and worldwide.",
-                                details: [
-                                    "Official Ontario Student Transcript issued",
-                                    "Credits recognized by universities worldwide",
-                                    "Transcript sent directly to institutions upon request",
-                                ],
+                                    "For students abroad, we offer online proctoring solutions through verified platforms to ensure global access.",
                             },
                         ].map((item) => (
                             <div
-                                key={item.step}
-                                className="flex gap-6 md:gap-10 items-start"
+                                key={item.title}
+                                className="bg-white rounded-xl p-8 border border-border hover:shadow-lg transition-all text-center"
                             >
-                                <div className="flex flex-col items-center">
-                                    <div className="w-16 h-16 bg-secondary text-white rounded-2xl flex items-center justify-center font-extrabold text-xl shadow-md flex-shrink-0">
-                                        {item.step.toString().padStart(2, "0")}
-                                    </div>
-                                    {item.step < 6 && (
-                                        <div className="w-0.5 h-full min-h-16 bg-border mt-4 hidden md:block" />
-                                    )}
-                                </div>
-                                <div className="flex-1 pb-4">
-                                    <h3 className="font-heading text-xl md:text-2xl font-bold text-primary mb-3">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-muted-foreground leading-relaxed mb-4">
-                                        {item.description}
-                                    </p>
-                                    <ul className="space-y-2">
-                                        {item.details.map((detail) => (
-                                            <li key={detail} className="flex items-start gap-2">
-                                                <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                                                <span className="text-sm text-foreground">
-                                                    {detail}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Course Timeline ── */}
-            <section className="bg-surface py-20 md:py-28">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-4">
-                        Course Timeline
-                    </h2>
-                    <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                        Here's what a typical course looks like from start to finish.
-                    </p>
-                    <div className="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
-                        <div className="overflow-x-auto">
-                            <table className="w-full">
-                                <thead>
-                                    <tr className="bg-primary text-white">
-                                        <th className="px-6 py-4 text-left font-bold">Phase</th>
-                                        <th className="px-6 py-4 text-left font-bold">Duration</th>
-                                        <th className="px-6 py-4 text-left font-bold">
-                                            Description
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-border">
-                                    {[
-                                        {
-                                            phase: "Registration & Onboarding",
-                                            duration: "1–2 Days",
-                                            description:
-                                                "Complete registration, receive course access, and orientation materials.",
-                                        },
-                                        {
-                                            phase: "Units 1–4 (Coursework)",
-                                            duration: "Self-Paced",
-                                            description:
-                                                "Work through interactive lessons and submit formative assessments.",
-                                        },
-                                        {
-                                            phase: "Final Evaluation",
-                                            duration: "1–2 Weeks",
-                                            description:
-                                                "Complete your summative assessment (30% of final grade).",
-                                        },
-                                        {
-                                            phase: "Grading & Transcript",
-                                            duration: "5–10 Days",
-                                            description:
-                                                "Final grade calculated and credit recorded on your OST.",
-                                        },
-                                    ].map((row) => (
-                                        <tr key={row.phase} className="hover:bg-surface">
-                                            <td className="px-6 py-4 font-medium text-primary whitespace-nowrap">
-                                                {row.phase}
-                                            </td>
-                                            <td className="px-6 py-4 text-muted-foreground whitespace-nowrap">
-                                                {row.duration}
-                                            </td>
-                                            <td className="px-6 py-4 text-muted-foreground">
-                                                {row.description}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Technical Requirements ── */}
-            <section className="bg-white py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-4">
-                        Technical Requirements
-                    </h2>
-                    <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-                        All you need to get started is a computer and an internet connection.
-                    </p>
-                    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {[
-                            {
-                                icon: Laptop,
-                                title: "Computer",
-                                description:
-                                    "A desktop or laptop computer (Windows, Mac, or Chromebook) with an up-to-date web browser.",
-                            },
-                            {
-                                icon: Wifi,
-                                title: "Internet Connection",
-                                description:
-                                    "A stable internet connection with at least 5 Mbps download speed for streaming lessons.",
-                            },
-                            {
-                                icon: Monitor,
-                                title: "Web Browser",
-                                description:
-                                    "Latest version of Chrome, Firefox, Safari, or Edge. JavaScript and cookies must be enabled.",
-                            },
-                        ].map((req) => (
-                            <div key={req.title} className="text-center">
                                 <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                                    <req.icon className="w-8 h-8 text-primary" />
+                                    <item.icon className="w-8 h-8 text-primary" />
                                 </div>
-                                <h3 className="font-heading text-lg font-bold text-primary mb-2">
-                                    {req.title}
+                                <h3 className="font-heading text-lg font-bold text-primary mb-3">
+                                    {item.title}
                                 </h3>
                                 <p className="text-muted-foreground text-sm leading-relaxed">
-                                    {req.description}
+                                    {item.description}
                                 </p>
                             </div>
                         ))}
@@ -288,27 +322,175 @@ export default function HowItWorksPage() {
                 </div>
             </section>
 
-            {/* ── CTA ── */}
-            <section className="bg-gradient-to-r from-secondary to-secondary-600 py-20 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {/* ── Earn Your Credit ── */}
+            <section className="relative py-20 text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=60"
+                    alt="Graduation"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-primary/90" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <GraduationCap className="w-16 h-16 text-secondary mx-auto mb-6" />
+                    <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
+                        Earn Your Credit
+                    </h2>
+                    <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
+                        Upon successful completion, we process your final grade and issue an
+                        official report card. We handle the submission of your marks to the
+                        appropriate institutions automatically.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-6">
+                        {[
+                            "Official Ontario Transcript",
+                            "OUAC/OCAS Submission",
+                            "Visa Letters Available",
+                        ].map((item) => (
+                            <div
+                                key={item}
+                                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-3 rounded-lg border border-white/10"
+                            >
+                                <CheckCircle className="w-5 h-5 text-secondary" />
+                                <span className="text-white/90 font-medium">{item}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Choose Your Pace ── */}
+            <section className="bg-white py-20 md:py-28">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary mb-4">
+                            Choose Your Pace
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            Flexible timelines to fit your lifestyle and deadlines
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        {[
+                            {
+                                icon: Rocket,
+                                title: "Sprint",
+                                timeline: "4 Weeks",
+                                description:
+                                    "Ideal for students who need to earn credit quickly. Intensive study with daily engagement.",
+                                color: "text-secondary",
+                                bg: "bg-secondary-50",
+                            },
+                            {
+                                icon: Timer,
+                                title: "Standard",
+                                timeline: "8–12 Weeks",
+                                description:
+                                    "Our most popular option. A balanced pace that allows for thorough learning.",
+                                color: "text-primary",
+                                bg: "bg-primary-50",
+                                popular: true,
+                            },
+                            {
+                                icon: Clock,
+                                title: "Extended",
+                                timeline: "Up to 12 Months",
+                                description:
+                                    "Maximum flexibility for students balancing work, travel, or other commitments.",
+                                color: "text-primary-700",
+                                bg: "bg-primary-50",
+                            },
+                        ].map((pace) => (
+                            <div
+                                key={pace.title}
+                                className={`rounded-2xl p-8 border-2 hover:shadow-lg transition-all text-center relative ${pace.popular ? "border-primary bg-primary-50/30" : "border-border bg-surface"}`}
+                            >
+                                {pace.popular && (
+                                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">
+                                        MOST POPULAR
+                                    </span>
+                                )}
+                                <div
+                                    className={`w-16 h-16 ${pace.bg} rounded-2xl flex items-center justify-center mx-auto mb-5`}
+                                >
+                                    <pace.icon className={`w-8 h-8 ${pace.color}`} />
+                                </div>
+                                <h3 className="font-heading text-xl font-bold text-primary mb-1">
+                                    {pace.title}
+                                </h3>
+                                <span className="text-secondary font-bold text-lg block mb-4">
+                                    {pace.timeline}
+                                </span>
+                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {pace.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Guidance Booking CTA ── */}
+            <section className="bg-surface py-20 md:py-28">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="bg-white rounded-2xl p-10 md:p-14 shadow-sm border border-border grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-primary mb-4">
+                                Need Personalized Guidance?
+                            </h2>
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                                Book a free 15-minute consultation with one of our academic
+                                advisors. We&apos;ll help you choose the right courses and create a
+                                study plan tailored to your goals.
+                            </p>
+                            <Link
+                                href="/contact"
+                                className="btn-brand-primary inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
+                            >
+                                <Calendar className="w-5 h-5" />
+                                Book a Free Consultation
+                            </Link>
+                        </div>
+                        <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+                            <Image
+                                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80"
+                                alt="Academic advisor"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── Final CTA ── */}
+            <section className="relative py-20 text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1627556704302-624286467c65?w=1920&q=80"
+                    alt="Start your journey"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary-600/90" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
                         Ready to Start?
                     </h2>
                     <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                        Register today and begin your Ontario education journey. Your first
-                        lesson is just a few clicks away.
+                        Join students from over 30 countries earning their Ontario diploma
+                        with Canada e Academy.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/register"
-                            className="inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             Register Now
                             <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="/courses"
-                            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
+                            className="btn-brand-outline inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
                         >
                             Browse Courses
                         </Link>

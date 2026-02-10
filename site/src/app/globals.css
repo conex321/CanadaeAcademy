@@ -61,7 +61,12 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
 }
 
@@ -70,8 +75,206 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus ring */
+/* Focus ring — default */
 *:focus-visible {
   outline: 2px solid var(--color-ring);
   outline-offset: 2px;
+}
+
+/* Interactive elements get red focus ring */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* ── Ken Burns Background Animation ── */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.08) translate(-1%, -1%);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 25s ease-in-out infinite;
+}
+
+/* ── Image Hover Zoom ── */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img,
+.img-hover-zoom>*>img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-hover-zoom:hover img,
+.img-hover-zoom:hover>*>img {
+  transform: scale(1.08);
+}
+
+/* ── Shimmer Overlay ── */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer-on-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 100%);
+  transform: translateX(-100%);
+  transition: none;
+  pointer-events: none;
+}
+
+.shimmer-on-hover:hover::after {
+  animation: shimmer 0.8s ease-in-out;
+}
+
+/* ── Dropdown Panel ── */
+.dropdown-panel {
+  animation: dropdownIn 0.2s ease-out;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Glow Border on Hover ── */
+.glow-on-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(44, 56, 146, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Floating animation ── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ── Nav Link Underline Slide ── */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width 0.25s ease, left 0.25s ease;
+  border-radius: 1px;
+}
+
+.nav-link-underline:hover::after,
+.nav-link-underline.nav-active::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* ── Brand Button Highlights ── */
+
+/* Primary CTA: red glow ring + shimmer on hover */
+.btn-brand-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-brand-primary:hover {
+  box-shadow:
+    0 0 0 3px rgba(237, 28, 35, 0.15),
+    0 4px 16px rgba(237, 28, 35, 0.25);
+}
+
+.btn-brand-primary:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(237, 28, 35, 0.2);
+}
+
+.btn-brand-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.btn-brand-primary:hover::after {
+  animation: shimmer 0.8s ease-in-out;
+}
+
+/* Ghost/outline buttons: subtle red ring on hover */
+.btn-brand-outline {
+  transition: all 0.3s ease;
+}
+
+.btn-brand-outline:hover {
+  box-shadow: 0 0 0 2px rgba(237, 28, 35, 0.12);
+}
+
+.btn-brand-outline:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* ── Form Input Focus Accent ── */
+.input-brand-focus {
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.input-brand-focus:focus {
+  border-left-color: var(--color-secondary);
 }

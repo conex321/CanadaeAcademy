@@ -258,7 +258,7 @@ export default function OSSDRequirementsPage() {
                         Start Earning Your OSSD Credits
                     </h2>
                     <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                        Browse our catalogue of 170+ courses and start working toward your
+                        Browse our catalogue of 75+ courses and start working toward your
                         Ontario Secondary School Diploma today.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

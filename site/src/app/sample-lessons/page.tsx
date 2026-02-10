@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import {
     Monitor,
@@ -16,6 +17,7 @@ import {
     Clock,
     Award,
 } from "lucide-react";
+import { BrandName } from "@/components/BrandName";
 
 const subjects = [
     { id: "all", label: "All Subjects" },
@@ -52,9 +54,16 @@ export default function SampleLessonsPage() {
     return (
         <>
             {/* ── Hero ── */}
-            <section className="bg-gradient-to-br from-primary via-primary-600 to-primary-800 text-white py-20 md:py-28 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <section className="relative min-h-[500px] text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80"
+                    alt="Students learning with interactive lessons"
+                    fill
+                    priority
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/85 to-primary-800/75" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
                             <Play className="w-4 h-4 text-secondary" />
@@ -70,7 +79,7 @@ export default function SampleLessonsPage() {
                         </p>
                         <Link
                             href="/courses"
-                            className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             View Full Course Catalogue
                             <ArrowRight className="w-5 h-5" />
@@ -209,8 +218,8 @@ export default function SampleLessonsPage() {
                                 key={sub.id}
                                 onClick={() => setActiveSubject(sub.id)}
                                 className={`whitespace-nowrap px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${activeSubject === sub.id
-                                        ? "bg-primary text-white shadow-md"
-                                        : "bg-surface text-muted-foreground hover:bg-primary-50"
+                                    ? "bg-primary text-white shadow-md"
+                                    : "bg-surface text-muted-foreground hover:bg-primary-50"
                                     }`}
                             >
                                 {sub.label}
@@ -250,7 +259,7 @@ export default function SampleLessonsPage() {
             <section className="bg-surface py-20 md:py-28">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="font-heading text-3xl md:text-4xl font-extrabold text-primary text-center mb-12">
-                        Canada e Academy vs. Traditional Online Schools
+                        <BrandName /> vs. Traditional Online Schools
                     </h2>
                     <div className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden">
                         <div className="overflow-x-auto">
@@ -259,7 +268,7 @@ export default function SampleLessonsPage() {
                                     <tr className="bg-primary text-white">
                                         <th className="px-6 py-4 text-left font-bold">Feature</th>
                                         <th className="px-6 py-4 text-center font-bold">
-                                            Canada e Academy
+                                            <BrandName />
                                         </th>
                                         <th className="px-6 py-4 text-center font-bold">
                                             Other Schools
@@ -284,7 +293,7 @@ export default function SampleLessonsPage() {
                                             them: false,
                                         },
                                         {
-                                            feature: "Ministry Inspected",
+                                            feature: "Ontario Private School",
                                             us: true,
                                             them: "Varies",
                                         },
@@ -336,26 +345,33 @@ export default function SampleLessonsPage() {
             </section>
 
             {/* ── CTA ── */}
-            <section className="bg-gradient-to-r from-secondary to-secondary-600 py-20 text-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="relative py-20 text-white overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1920&q=80"
+                    alt="Start learning today"
+                    fill
+                    className="object-cover animate-ken-burns"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary-600/90" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <h2 className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
                         Ready to Experience the Difference?
                     </h2>
                     <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                        Join Canada e Academy and learn with interactive animated lessons
+                        Join <BrandName /> and learn with interactive animated lessons
                         that make studying engaging and effective.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/register"
-                            className="inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
+                            className="btn-brand-primary inline-flex items-center justify-center gap-2 bg-white text-secondary hover:bg-white/90 px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:-translate-y-0.5"
                         >
                             Register Now
                             <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="/courses"
-                            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
+                            className="btn-brand-outline inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all border border-white/20"
                         >
                             Browse Courses
                         </Link>
