@@ -15,7 +15,9 @@ import {
     HelpCircle,
     Mail,
     Info,
+    ShoppingBag,
 } from "lucide-react";
+import { useCart } from "./CartContext";
 import { MobileNav } from "./MobileNav";
 import Image from "next/image";
 
@@ -148,6 +150,24 @@ function DropdownPanel({
     );
 }
 
+function CartButton() {
+    const { itemCount, toggleCart } = useCart();
+    return (
+        <button
+            onClick={toggleCart}
+            className="relative p-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition-all"
+            aria-label={`Cart (${itemCount} items)`}
+        >
+            <ShoppingBag className="w-5 h-5" />
+            {itemCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-secondary text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-sm animate-pulse">
+                    {itemCount}
+                </span>
+            )}
+        </button>
+    );
+}
+
 export function Header() {
     const pathname = usePathname();
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -257,8 +277,9 @@ export function Header() {
                             })}
                         </nav>
 
-                        {/* CTA + Mobile Toggle */}
+                        {/* Cart + CTA + Mobile Toggle */}
                         <div className="flex items-center gap-3">
+                            <CartButton />
                             <Link
                                 href="/contact"
                                 className="btn-brand-primary hidden md:inline-flex bg-primary hover:bg-primary-600 text-white px-5 py-2.5 rounded-lg font-bold transition-all shadow-md hover:-translate-y-0.5"

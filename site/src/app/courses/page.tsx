@@ -9,8 +9,12 @@ import {
     Shield,
     Globe,
     Filter,
-    Sparkles,
+    ShoppingBag,
+    Check,
+    Plus,
+    MapPin,
 } from "lucide-react";
+import { useCart, formatPrice, type StudentType } from "@/components/CartContext";
 
 const categories = [
     "All Courses",
@@ -23,53 +27,63 @@ const categories = [
     "Languages",
 ];
 
-const courses = [
+interface CourseData {
+    code: string;
+    name: string;
+    grade: string;
+    pathway: string;
+    category: string;
+    priceDomestic: number;
+    priceInternational: number;
+}
+
+const courses: CourseData[] = [
     // Grade 12
-    { code: "MHF4U", name: "Advanced Functions", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "MCV4U", name: "Calculus and Vectors", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "SCH4U", name: "Chemistry", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "SPH4U", name: "Physics", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "SBI4U", name: "Biology", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "ENG4U", name: "English", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "MDM4U", name: "Mathematics of Data Management", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "BOH4M", name: "Business Leadership", grade: "Grade 12", pathway: "University/College", category: "Grade 12" },
-    { code: "CIA4U", name: "Economics", grade: "Grade 12", pathway: "University", category: "Grade 12" },
-    { code: "CPW4U", name: "Canadian & World Politics", grade: "Grade 12", pathway: "University", category: "Grade 12" },
+    { code: "MHF4U", name: "Advanced Functions", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "MCV4U", name: "Calculus and Vectors", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SCH4U", name: "Chemistry", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SPH4U", name: "Physics", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SBI4U", name: "Biology", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ENG4U", name: "English", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "MDM4U", name: "Mathematics of Data Management", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "BOH4M", name: "Business Leadership", grade: "Grade 12", pathway: "University/College", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "CIA4U", name: "Economics", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "CPW4U", name: "Canadian & World Politics", grade: "Grade 12", pathway: "University", category: "Grade 12", priceDomestic: 57400, priceInternational: 122400 },
     // Grade 11
-    { code: "MCR3U", name: "Functions", grade: "Grade 11", pathway: "University", category: "Grade 11" },
-    { code: "SPH3U", name: "Physics", grade: "Grade 11", pathway: "University", category: "Grade 11" },
-    { code: "SCH3U", name: "Chemistry", grade: "Grade 11", pathway: "University", category: "Grade 11" },
-    { code: "SBI3U", name: "Biology", grade: "Grade 11", pathway: "University", category: "Grade 11" },
-    { code: "ENG3U", name: "English", grade: "Grade 11", pathway: "University", category: "Grade 11" },
-    { code: "BAF3M", name: "Financial Accounting", grade: "Grade 11", pathway: "University/College", category: "Grade 11" },
-    { code: "ICS3U", name: "Introduction to Computer Science", grade: "Grade 11", pathway: "University", category: "Grade 11" },
+    { code: "MCR3U", name: "Functions", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SPH3U", name: "Physics", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SCH3U", name: "Chemistry", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SBI3U", name: "Biology", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ENG3U", name: "English", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "BAF3M", name: "Financial Accounting", grade: "Grade 11", pathway: "University/College", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ICS3U", name: "Introduction to Computer Science", grade: "Grade 11", pathway: "University", category: "Grade 11", priceDomestic: 57400, priceInternational: 122400 },
     // Grade 10
-    { code: "MPM2D", name: "Principles of Mathematics", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10" },
-    { code: "SNC2D", name: "Science", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10" },
-    { code: "ENG2D", name: "English", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10" },
-    { code: "CHV2O", name: "Civics", grade: "Grade 10", pathway: "Open", category: "Grade 10" },
-    { code: "GLC2O", name: "Career Studies", grade: "Grade 10", pathway: "Open", category: "Grade 10" },
+    { code: "MPM2D", name: "Principles of Mathematics", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SNC2D", name: "Science", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ENG2D", name: "English", grade: "Grade 10", pathway: "De-streamed", category: "Grade 10", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "CHV2O", name: "Civics", grade: "Grade 10", pathway: "Open", category: "Grade 10", priceDomestic: 57400, priceInternational: 122400 },
     // Grade 9
-    { code: "MTH1W", name: "Mathematics", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9" },
-    { code: "SNC1W", name: "Science", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9" },
-    { code: "ENG1W", name: "English", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9" },
+    { code: "MTH1W", name: "Mathematics", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "SNC1W", name: "Science", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ENG1W", name: "English", grade: "Grade 9", pathway: "De-streamed", category: "Grade 9", priceDomestic: 57400, priceInternational: 122400 },
     // ESL
-    { code: "ESLAO", name: "ESL Level 1", grade: "ESL", pathway: "Open", category: "ESL" },
-    { code: "ESLBO", name: "ESL Level 2", grade: "ESL", pathway: "Open", category: "ESL" },
-    { code: "ESLCO", name: "ESL Level 3", grade: "ESL", pathway: "Open", category: "ESL" },
-    { code: "ESLDO", name: "ESL Level 4", grade: "ESL", pathway: "Open", category: "ESL" },
-    { code: "ESLEO", name: "ESL Level 5", grade: "ESL", pathway: "Open", category: "ESL" },
+    { code: "ESLAO", name: "ESL Level 1", grade: "ESL", pathway: "Open", category: "ESL", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ESLBO", name: "ESL Level 2", grade: "ESL", pathway: "Open", category: "ESL", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ESLCO", name: "ESL Level 3", grade: "ESL", pathway: "Open", category: "ESL", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ESLDO", name: "ESL Level 4", grade: "ESL", pathway: "Open", category: "ESL", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "ESLEO", name: "ESL Level 5", grade: "ESL", pathway: "Open", category: "ESL", priceDomestic: 57400, priceInternational: 122400 },
     // Free
-    { code: "GLC2O", name: "Career Studies", grade: "Grade 10", pathway: "Open", category: "Free" },
-    { code: "GLS1O", name: "Learning Strategies", grade: "Grade 9", pathway: "Open", category: "Free" },
+    { code: "GLC2O", name: "Career Studies", grade: "Grade 10", pathway: "Open", category: "Free", priceDomestic: 0, priceInternational: 0 },
+    { code: "GLS1O", name: "Learning Strategies", grade: "Grade 9", pathway: "Open", category: "Free", priceDomestic: 0, priceInternational: 0 },
     // Languages
-    { code: "FSF1O", name: "Core French", grade: "Grade 9", pathway: "Open", category: "Languages" },
-    { code: "LKBDU", name: "Mandarin", grade: "Grade 12", pathway: "University", category: "Languages" },
+    { code: "FSF1O", name: "Core French", grade: "Grade 9", pathway: "Open", category: "Languages", priceDomestic: 57400, priceInternational: 122400 },
+    { code: "LKBDU", name: "Mandarin", grade: "Grade 12", pathway: "University", category: "Languages", priceDomestic: 57400, priceInternational: 122400 },
 ];
 
 export default function CoursesPage() {
     const [activeCategory, setActiveCategory] = useState("All Courses");
     const [searchQuery, setSearchQuery] = useState("");
+    const { studentType, setStudentType, addItem, isInCart, openCart, itemCount } = useCart();
 
     const filteredCourses = courses.filter((course) => {
         const matchesCategory =
@@ -79,6 +93,17 @@ export default function CoursesPage() {
             course.code.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesCategory && matchesSearch;
     });
+
+    const handleAddToCart = (course: CourseData) => {
+        addItem({
+            courseCode: course.code,
+            courseName: course.name,
+            grade: course.grade,
+            pathway: course.pathway,
+            priceDomestic: course.priceDomestic,
+            priceInternational: course.priceInternational,
+        });
+    };
 
     return (
         <>
@@ -105,9 +130,10 @@ export default function CoursesPage() {
             </section>
 
             {/* ── Filter Bar ── */}
-            <section className="sticky top-20 z-40 bg-white border-b border-border shadow-sm">
+            <section className="sticky top-28 z-40 bg-white border-b border-border shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex flex-col md:flex-row gap-4 items-center">
+                        {/* Category Filters */}
                         <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto">
                             <Filter className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                             {categories.map((cat) => (
@@ -115,23 +141,63 @@ export default function CoursesPage() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`whitespace-nowrap px-4 py-2 rounded-lg text-sm font-medium transition-all ${activeCategory === cat
-                                            ? "bg-primary text-white shadow-md"
-                                            : "bg-surface text-muted-foreground hover:bg-primary-50 hover:text-primary"
+                                        ? "bg-primary text-white shadow-md"
+                                        : "bg-surface text-muted-foreground hover:bg-primary-50 hover:text-primary"
                                         }`}
                                 >
                                     {cat}
                                 </button>
                             ))}
                         </div>
-                        <div className="relative w-full md:w-64 md:ml-auto">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                            <input
-                                type="text"
-                                placeholder="Search courses..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                            />
+
+                        {/* Student type toggle + search */}
+                        <div className="flex items-center gap-3 w-full md:w-auto md:ml-auto">
+                            {/* Student Type Toggle */}
+                            <div className="flex items-center bg-surface rounded-lg border border-border p-0.5">
+                                <button
+                                    onClick={() => setStudentType("domestic")}
+                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${studentType === "domestic"
+                                            ? "bg-white text-primary shadow-sm"
+                                            : "text-muted-foreground hover:text-primary"
+                                        }`}
+                                >
+                                    <MapPin className="w-3 h-3" />
+                                    Domestic
+                                </button>
+                                <button
+                                    onClick={() => setStudentType("international")}
+                                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${studentType === "international"
+                                            ? "bg-white text-primary shadow-sm"
+                                            : "text-muted-foreground hover:text-primary"
+                                        }`}
+                                >
+                                    <Globe className="w-3 h-3" />
+                                    International
+                                </button>
+                            </div>
+
+                            {/* Search */}
+                            <div className="relative w-full md:w-48">
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                                <input
+                                    type="text"
+                                    placeholder="Search courses..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                                />
+                            </div>
+
+                            {/* Cart summary button */}
+                            {itemCount > 0 && (
+                                <button
+                                    onClick={openCart}
+                                    className="hidden md:flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-md hover:-translate-y-0.5"
+                                >
+                                    <ShoppingBag className="w-4 h-4" />
+                                    {itemCount} item{itemCount !== 1 ? "s" : ""}
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -144,6 +210,10 @@ export default function CoursesPage() {
                         Showing {filteredCourses.length} course{filteredCourses.length !== 1 && "s"}
                         {activeCategory !== "All Courses" && ` in ${activeCategory}`}
                         {searchQuery && ` matching "${searchQuery}"`}
+                        {" · "}
+                        <span className="font-medium text-primary">
+                            {studentType === "domestic" ? "Domestic" : "International"} pricing
+                        </span>
                     </div>
 
                     {filteredCourses.length === 0 ? (
@@ -153,33 +223,74 @@ export default function CoursesPage() {
                                 No Courses Found
                             </h3>
                             <p className="text-muted-foreground">
-                                Try adjusting your search or filter to find what you're looking
+                                Try adjusting your search or filter to find what you&apos;re looking
                                 for.
                             </p>
                         </div>
                     ) : (
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                            {filteredCourses.map((course, i) => (
-                                <div
-                                    key={`${course.code}-${course.category}-${i}`}
-                                    className="bg-white rounded-xl p-6 shadow-sm border border-border hover:shadow-md hover:-translate-y-0.5 transition-all"
-                                >
-                                    <div className="flex items-start justify-between mb-3">
-                                        <span className="inline-block bg-primary-50 text-primary text-xs font-bold px-2.5 py-1 rounded-md">
-                                            {course.code}
+                            {filteredCourses.map((course, i) => {
+                                const inCart = isInCart(course.code);
+                                const price =
+                                    studentType === "domestic"
+                                        ? course.priceDomestic
+                                        : course.priceInternational;
+                                const isFree = price === 0;
+
+                                return (
+                                    <div
+                                        key={`${course.code}-${course.category}-${i}`}
+                                        className={`bg-white rounded-xl p-6 shadow-sm border transition-all hover:shadow-md hover:-translate-y-0.5 ${inCart
+                                                ? "border-secondary/40 ring-1 ring-secondary/20"
+                                                : "border-border"
+                                            }`}
+                                    >
+                                        <div className="flex items-start justify-between mb-3">
+                                            <span className="inline-block bg-primary-50 text-primary text-xs font-bold px-2.5 py-1 rounded-md">
+                                                {course.code}
+                                            </span>
+                                            <span className="text-xs text-muted-foreground font-medium">
+                                                {course.grade}
+                                            </span>
+                                        </div>
+                                        <h3 className="font-heading font-bold text-primary mb-2 leading-tight">
+                                            {course.name}
+                                        </h3>
+                                        <span className="inline-block text-xs bg-surface text-muted-foreground px-2 py-1 rounded-md mb-4">
+                                            {course.pathway}
                                         </span>
-                                        <span className="text-xs text-muted-foreground font-medium">
-                                            {course.grade}
-                                        </span>
+
+                                        {/* Price + Add to Cart */}
+                                        <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/50">
+                                            <span
+                                                className={`font-extrabold text-lg ${isFree
+                                                        ? "text-success"
+                                                        : "text-secondary"
+                                                    }`}
+                                            >
+                                                {formatPrice(price)}
+                                            </span>
+                                            {inCart ? (
+                                                <button
+                                                    onClick={openCart}
+                                                    className="flex items-center gap-1.5 bg-secondary/10 text-secondary px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:bg-secondary/20"
+                                                >
+                                                    <Check className="w-3.5 h-3.5" />
+                                                    In Cart
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    onClick={() => handleAddToCart(course)}
+                                                    className="flex items-center gap-1.5 bg-secondary hover:bg-secondary-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-sm hover:-translate-y-0.5"
+                                                >
+                                                    <Plus className="w-3.5 h-3.5" />
+                                                    Add
+                                                </button>
+                                            )}
+                                        </div>
                                     </div>
-                                    <h3 className="font-heading font-bold text-primary mb-2">
-                                        {course.name}
-                                    </h3>
-                                    <span className="inline-block text-xs bg-surface text-muted-foreground px-2 py-1 rounded-md">
-                                        {course.pathway}
-                                    </span>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     )}
                 </div>
@@ -196,8 +307,9 @@ export default function CoursesPage() {
                         teacher support, and your official Ontario transcript.
                     </p>
                     <div className="grid md:grid-cols-2 gap-8">
-                        {[
+                        {([
                             {
+                                type: "domestic" as StudentType,
                                 title: "Domestic Students",
                                 price: "$574",
                                 description: "Canadian citizens & permanent residents",
@@ -209,6 +321,7 @@ export default function CoursesPage() {
                                 ],
                             },
                             {
+                                type: "international" as StudentType,
                                 title: "International Students",
                                 price: "$1,224",
                                 description: "Students studying from outside Canada",
@@ -219,14 +332,24 @@ export default function CoursesPage() {
                                     "Transcript courier to any country",
                                 ],
                             },
-                        ].map((plan) => (
+                        ]).map((plan) => (
                             <div
                                 key={plan.title}
-                                className="bg-surface rounded-2xl p-8 border border-border"
+                                className={`rounded-2xl p-8 border transition-all ${studentType === plan.type
+                                        ? "bg-primary-50/50 border-primary/20 ring-2 ring-primary/10 shadow-md"
+                                        : "bg-surface border-border"
+                                    }`}
                             >
-                                <h3 className="font-heading text-xl font-bold text-primary mb-1">
-                                    {plan.title}
-                                </h3>
+                                <div className="flex items-center justify-between mb-1">
+                                    <h3 className="font-heading text-xl font-bold text-primary">
+                                        {plan.title}
+                                    </h3>
+                                    {studentType === plan.type && (
+                                        <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full font-bold">
+                                            Selected
+                                        </span>
+                                    )}
+                                </div>
                                 <p className="text-sm text-muted-foreground mb-4">
                                     {plan.description}
                                 </p>
@@ -244,12 +367,17 @@ export default function CoursesPage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link
-                                    href="/register"
-                                    className="mt-8 block text-center bg-secondary hover:bg-secondary-600 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
+                                <button
+                                    onClick={() => setStudentType(plan.type)}
+                                    className={`mt-8 block text-center w-full px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5 ${studentType === plan.type
+                                            ? "bg-primary text-white"
+                                            : "bg-secondary hover:bg-secondary-600 text-white"
+                                        }`}
                                 >
-                                    Register Now
-                                </Link>
+                                    {studentType === plan.type
+                                        ? "✓ Currently Selected"
+                                        : `Select ${plan.type === "domestic" ? "Domestic" : "International"}`}
+                                </button>
                             </div>
                         ))}
                     </div>
@@ -260,10 +388,10 @@ export default function CoursesPage() {
             <section className="bg-gradient-to-r from-secondary to-secondary-600 py-16 text-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="font-heading text-3xl font-extrabold mb-4">
-                        Don't See Your Course?
+                        Don&apos;t See Your Course?
                     </h2>
                     <p className="text-lg text-white/90 mb-8 max-w-xl mx-auto">
-                        We're continuously adding new courses. Contact us for the latest
+                        We&apos;re continuously adding new courses. Contact us for the latest
                         availability or to request a specific course.
                     </p>
                     <Link
