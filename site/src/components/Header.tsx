@@ -123,7 +123,7 @@ function DropdownPanel({
                 : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
         >
-            <div className="bg-white rounded-xl shadow-xl border border-border p-2 min-w-[320px] dropdown-panel" style={{ transformOrigin: 'top center' }}>
+            <div className="bg-white rounded-xl shadow-xl border border-border p-2 min-w-[320px] max-w-[calc(100vw-2rem)] dropdown-panel" style={{ transformOrigin: 'top center' }}>
                 {/* Arrow */}
                 <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-border rotate-45" />
                 {children.map((child) => (
@@ -209,7 +209,7 @@ export function Header() {
         <>
             <header className={`sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-border transition-shadow duration-300 ${scrolled ? "shadow-md" : ""}`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-28">
+                    <div className="flex justify-between items-center h-16 sm:h-20 md:h-28">
                         {/* Logo — favicon icon + words side by side */}
                         <Link href="/" className="flex items-center gap-2 sm:gap-3 group transition-transform duration-200 hover:scale-[1.03] active:scale-[0.97] shrink-0">
                             <Image
@@ -218,7 +218,7 @@ export function Header() {
                                 width={72}
                                 height={72}
                                 priority
-                                className="h-14 sm:h-[72px] w-auto"
+                                className="h-9 sm:h-12 md:h-[72px] w-auto"
                             />
                             <Image
                                 src="/images/CanadaeAcademy - Words Only - 250 x 100 px.svg"
@@ -226,7 +226,7 @@ export function Header() {
                                 width={300}
                                 height={120}
                                 priority
-                                className="h-14 sm:h-20 w-auto"
+                                className="h-9 sm:h-12 md:h-20 w-auto"
                             />
                         </Link>
 

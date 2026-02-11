@@ -172,8 +172,10 @@ a:focus-visible {
   transition: box-shadow 0.3s ease;
 }
 
-.glow-on-hover:hover {
-  box-shadow: 0 0 20px rgba(44, 56, 146, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+@media (hover: hover) {
+  .glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(44, 56, 146, 0.15), 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* ── Floating animation ── */
@@ -277,4 +279,29 @@ a:focus-visible {
 
 .input-brand-focus:focus {
   border-left-color: var(--color-secondary);
+}
+
+/* ── Typewriter Cursor Blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 0.7s step-end infinite;
+}
+
+/* ── Mobile Touch Feedback ── */
+/* Active (tap) feedback for touch devices */
+.btn-brand-primary:active,
+.btn-brand-outline:active {
+  transform: scale(0.98);
+}
+
+/* Ensure tap targets are at least 44px on touch devices */
+@media (pointer: coarse) {
+  .btn-brand-primary,
+  .btn-brand-outline {
+    min-height: 44px;
+  }
 }

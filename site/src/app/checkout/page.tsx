@@ -306,11 +306,11 @@ export default function CheckoutPage() {
                                         </p>
 
                                         {/* Student Type Toggle */}
-                                        <div className="flex items-center gap-3 mb-6 p-4 bg-surface rounded-xl border border-border">
+                                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6 p-4 bg-surface rounded-xl border border-border">
                                             <span className="text-sm font-medium text-primary">
                                                 I am a:
                                             </span>
-                                            <div className="flex items-center bg-white rounded-lg border border-border p-0.5">
+                                            <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white rounded-lg border border-border p-0.5">
                                                 <button
                                                     type="button"
                                                     onClick={() => setStudentType("domestic")}
@@ -386,10 +386,10 @@ export default function CheckoutPage() {
                                             </span>
                                         </div>
 
-                                        <div className="flex items-center justify-between gap-4">
+                                        <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
                                             <Link
                                                 href="/courses"
-                                                className="flex items-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+                                                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
                                             >
                                                 <ArrowLeft className="w-4 h-4" />
                                                 Add More Courses
@@ -397,7 +397,7 @@ export default function CheckoutPage() {
                                             <button
                                                 type="button"
                                                 onClick={() => setCurrentStep(2)}
-                                                className="flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
+                                                className="flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
                                             >
                                                 Continue
                                                 <ArrowRight className="w-4 h-4" />
@@ -663,11 +663,11 @@ export default function CheckoutPage() {
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center justify-between gap-4 mt-8">
+                                        <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3 mt-8">
                                             <button
                                                 type="button"
                                                 onClick={() => setCurrentStep(1)}
-                                                className="flex items-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+                                                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
                                             >
                                                 <ArrowLeft className="w-4 h-4" />
                                                 Back to Cart
@@ -684,7 +684,7 @@ export default function CheckoutPage() {
                                                     setErrorMsg("");
                                                     setCurrentStep(3);
                                                 }}
-                                                className="flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
+                                                className="flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5"
                                             >
                                                 Continue to Payment
                                                 <ArrowRight className="w-4 h-4" />
@@ -769,11 +769,11 @@ export default function CheckoutPage() {
                                             </p>
                                         </div>
 
-                                        <div className="flex items-center justify-between gap-4">
+                                        <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
                                             <button
                                                 type="button"
                                                 onClick={() => setCurrentStep(2)}
-                                                className="flex items-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
+                                                className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary text-sm font-medium transition-colors"
                                             >
                                                 <ArrowLeft className="w-4 h-4" />
                                                 Back
@@ -781,7 +781,7 @@ export default function CheckoutPage() {
                                             <button
                                                 type="submit"
                                                 disabled={status === "submitting"}
-                                                className="flex items-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                className="flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-600 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-md hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                                             >
                                                 {status === "submitting" ? (
                                                     <>

@@ -130,7 +130,7 @@ export default function CoursesPage() {
             </section>
 
             {/* ── Filter Bar ── */}
-            <section className="sticky top-28 z-40 bg-white border-b border-border shadow-sm">
+            <section className="sticky top-16 sm:top-20 md:top-28 z-40 bg-white border-b border-border shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex flex-col md:flex-row gap-4 items-center">
                         {/* Category Filters */}
@@ -151,7 +151,7 @@ export default function CoursesPage() {
                         </div>
 
                         {/* Student type toggle + search */}
-                        <div className="flex items-center gap-3 w-full md:w-auto md:ml-auto">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto md:ml-auto">
                             {/* Student Type Toggle */}
                             <div className="flex items-center bg-surface rounded-lg border border-border p-0.5">
                                 <button
@@ -273,7 +273,7 @@ export default function CoursesPage() {
                                             {inCart ? (
                                                 <button
                                                     onClick={openCart}
-                                                    className="flex items-center gap-1.5 bg-secondary/10 text-secondary px-3 py-1.5 rounded-lg text-xs font-bold transition-all hover:bg-secondary/20"
+                                                    className="flex items-center gap-1.5 bg-secondary/10 text-secondary px-4 py-2 rounded-lg text-sm font-bold transition-all hover:bg-secondary/20"
                                                 >
                                                     <Check className="w-3.5 h-3.5" />
                                                     In Cart
@@ -281,7 +281,7 @@ export default function CoursesPage() {
                                             ) : (
                                                 <button
                                                     onClick={() => handleAddToCart(course)}
-                                                    className="flex items-center gap-1.5 bg-secondary hover:bg-secondary-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all shadow-sm hover:-translate-y-0.5"
+                                                    className="flex items-center gap-1.5 bg-secondary hover:bg-secondary-600 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all shadow-sm hover:-translate-y-0.5"
                                                 >
                                                     <Plus className="w-3.5 h-3.5" />
                                                     Add

@@ -17,6 +17,7 @@ import {
   Play,
 } from "lucide-react";
 import { BrandName } from "@/components/BrandName";
+import { TypewriterHero } from "@/components/TypewriterHero";
 
 export const metadata: Metadata = {
   title: "Ontario Online High School — OSSD Courses | Canada e Academy",
@@ -47,9 +48,9 @@ export default function HomePage() {
               <Shield className="w-4 h-4 text-secondary" />
               <span>Online Private Ontario School — BSID Pending</span>
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
               Your Ontario High School
-              <span className="text-secondary"> Diploma, Anywhere</span>
+              <TypewriterHero />
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
               Canada e Academy is an online private Ontario high school
